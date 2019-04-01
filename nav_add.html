@@ -33,7 +33,7 @@
             <ul class="cl" >
                 <!--顶级分类-->
                 <li v-for="vo,index in menu" :class="{hidden:vo.hidden}">
-                    <a :href="vo.url=='' ? 'javascript:;' : vo.url " @click="onMenu(index)">
+                    <a :href="vo.url=='' ? 'javascript:;' : vo.url " :class="{active:vo.active}" @click="onMenu(index)" @click="onActive(index)">
                         <i class="layui-icon" v-html="vo.icon"></i>
                         <span v-text="vo.name"></span>
                         <i class="layui-icon" v-show="vo.url.length==0">&#xe61a;</i>
@@ -114,6 +114,7 @@
         </div>
     </div>
 </div>
-<script src="./static/admin/js/config.js"></script><script src="./static/admin/js/script.js"></script>
+<script src="./static/admin/js/config.js"></script>
+<script src="./static/admin/js/script.js"></script>
 </body>
 </html>

@@ -62,6 +62,7 @@ var vue = new Vue({
                 data.active = true;
             }else{
                 this.menu.forEach((v,k)=>{
+                    v.active = false;
                     v.list.forEach((v2,k2)=>{
                         v2.active = false;
                     })
