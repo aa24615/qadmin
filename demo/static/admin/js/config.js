@@ -1,6 +1,6 @@
 
 //网站名称
-var webname = 'QLayui';
+var webname = 'QAdmin';
 
 //菜单列表 只支持二级
 var menu =  [
@@ -99,13 +99,13 @@ var menu =  [
     {
         name:'开发者官网',
         icon:'&#xe65f;',
-        url:'http://www.qlayui.com/',
+        url:'http://www.qadmin.net/',
         list:[]
     },
     {
         name:'开发文档',
         icon:'&#xe655;',
-        url:'http://www.qlayui.com/',
+        url:'http://docs.qadmin.net/',
         list:[]
     }
 ];
