@@ -12,10 +12,10 @@
     <script src="./static/common/jquery-3.3.1.min.js"></script>
     <script src="./static/common/vue.min.js"></script>
     <style>
-        h2{
+        .right h2{
             margin: 10px 0;
         }
-        li{
+        .right li{
             margin-bottom: 10px;
         }
     </style>
@@ -45,7 +45,7 @@
                     <a href="javascript:;" :class="{active:vo.active}" @click="onActive(index)">
                         <i class="layui-icon" v-html="vo.icon"></i>
                         <span v-text="vo.name"></span>
-                        <i class="layui-icon" v-show="vo.url.length==0">&#xe61a;</i>
+                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i> <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
                     </a>
                     <!--子级分类-->
                     <div v-for="vo2,index2 in vo.list">

@@ -143,7 +143,7 @@ header .breadcrumb li{
 .left ul li.hidden div{
     display: none;
 }
-.left ul li.hidden i:last-child{
+.left ul li.hidden i.arrow{
     transform:rotate(180deg);
     -ms-transform:rotate(180deg);
     -moz-transform:rotate(180deg);
@@ -168,7 +168,7 @@ header .breadcrumb li{
     margin-right: 5px;
 }
 
-.left ul li i:last-child {
+.left ul li i.arrow {
     float: right;
     margin-right: 20px;
     font-size: 12px;
@@ -183,11 +183,13 @@ header .breadcrumb li{
     color: #b2b2b2;
 }
 
-.left ul li>div i.active{
+.left ul li i.active {
     color: #eee;
     position: absolute;
     right: -6px;
-    top: 5px;
+    height: 40px;
+    line-height: 40px;
+    top: 0px;
     margin: 0;
     font-size: 20px;
     z-index: 1;

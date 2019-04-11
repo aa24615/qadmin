@@ -46,20 +46,36 @@ var vue = new Vue({
     methods:{
         //记住收展 记住当前
         onActive:function (pid,id=false) {
-            var data;
-
-            this.menu.forEach((v,k)=>{
-                v.active = false;
-                v.list.forEach((v2,k2)=>{
-                    v2.active = false;
-                })
-            })
-
+            let data;
             if(id===false){
+
                 data = this.menu[pid];
-                data.active = true;
+
+
+                if(data.url.length>0){
+                    this.menu.forEach((v,k)=>{
+                        v.active = false;
+                        v.list.forEach((v2,k2)=>{
+                            v2.active = false;
+                        })
+                    })
+
+                    data.active = true;
+
+                }
+
                 data.hidden = !data.hidden;
+
+
             }else{
+
+                this.menu.forEach((v,k)=>{
+                    v.active = false;
+                    v.list.forEach((v2,k2)=>{
+                        v2.active = false;
+                    })
+                })
+
                 data = this.menu[pid].list[id];
                 data.active = true;
             }
