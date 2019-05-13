@@ -13,18 +13,20 @@ var vue = new Vue({
     },
     created:function(){
 
-        //左侧菜单
+        //加载左侧菜单
         let data = sessionStorage.menu;
         if(!data){
             console.log(88)
-            $.get(menuUrl,function (menu) {
-                menu = JSON.parse(menu);
-                console.log(menu,1111);
-                sessionStorage.menu = JSON.stringify(menu);
-                this.menu = menu;
-                this.thisAttr();
+            $.ajax({
+                url: menuUrl,
+                dataType: 'text',
+                success:  (menu) => {
+                    menu = eval('(' + menu + ')');
+                    sessionStorage.menu = JSON.stringify(menu);
+                    this.menu = menu;
+                    this.thisAttr();
+                }
             })
-
         }else{
             console.log('222')
             this.menu = JSON.parse(data);
@@ -74,10 +76,11 @@ var vue = new Vue({
                 window.location.href = data.url;
             }
         },
-        //更新存储
+        //更新菜单缓存
         updateStorage(){
             sessionStorage.menu = JSON.stringify(this.menu);
         },
+
         //当前位置
         thisAttr:function () {
             //当前位置
