@@ -101,7 +101,7 @@ var menuUrl = 'data/menu.json';
 
 ### 菜单
 
-```json
+```javascript
 
 [{
     "name": "顶级菜单",
@@ -126,4 +126,15 @@ var menuUrl = 'data/menu.json';
 ```
 
 ### 常用方法
+
+```javascript
+delCache(); //清除前端缓存
+
+//提示框
+msg({code:1,msg:'成功'}); //以对象传入
+msg(1,'成功','/index.html',2); //传入跳转地址与跳转秒数
+
+//
+
+```
 
