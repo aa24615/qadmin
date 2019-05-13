@@ -84,7 +84,8 @@ var vue = new Vue({
         thisActive:function(){
             let pathname = window.location.pathname;
             let host = window.location.host;
-            let is = false;
+            let pid = 0;
+            let id = 0;
             this.menu.forEach((v,k)=>{
                 let url = v.url;
                 if(url.length>0){
@@ -93,8 +94,7 @@ var vue = new Vue({
                     }
                 }
                 if(pathname==url){
-                    v2.active = true;
-                    is = true;
+                    pid = k;
                 }
                 v.list.forEach((v2,k2)=>{
                     let url = v2.url;
@@ -105,12 +105,18 @@ var vue = new Vue({
                         }
                     }
                     if(pathname==url){
-                        v2.active = true;
+                        id = k2;
                     }
                 })
             })
 
-
+            if(id>0){
+                this.menu[pid].list[id].active = true;
+            }else{
+                if(pid>0){
+                    this.menu[pid].active = true;
+                }
+            }
 
             this.updateStorage();
 
