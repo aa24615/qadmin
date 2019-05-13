@@ -25,12 +25,13 @@ var vue = new Vue({
                     sessionStorage.menu = JSON.stringify(menu);
                     this.menu = menu;
                     this.thisAttr();
+                    this.thisActive();
                 }
             })
         }else{
-            console.log('222')
             this.menu = JSON.parse(data);
             this.thisAttr();
+            this.thisActive();
         }
 
 
@@ -42,7 +43,6 @@ var vue = new Vue({
             if(id===false){
 
                 data = this.menu[pid];
-
 
                 if(data.url.length>0){
                     this.menu.forEach((v,k)=>{
@@ -58,7 +58,6 @@ var vue = new Vue({
 
                 data.hidden = !data.hidden;
 
-
             }else{
 
                 this.menu.forEach((v,k)=>{
@@ -69,18 +68,53 @@ var vue = new Vue({
                 })
 
                 data = this.menu[pid].list[id];
-                data.active = true;
+                //data.active = true;
             }
             this.updateStorage();
             if(data.url.length>0){
                 window.location.href = data.url;
             }
         },
+
         //更新菜单缓存
         updateStorage(){
             sessionStorage.menu = JSON.stringify(this.menu);
         },
+        //菜单高亮
+        thisActive:function(){
+            let pathname = window.location.pathname;
+            let host = window.location.host;
+            let is = false;
+            this.menu.forEach((v,k)=>{
+                let url = v.url;
+                if(url.length>0){
+                    if(url[0]!='/' || url.substr(0,4)!='http'){
+                        url = '/'+url;
+                    }
+                }
+                if(pathname==url){
+                    v2.active = true;
+                    is = true;
+                }
+                v.list.forEach((v2,k2)=>{
+                    let url = v2.url;
 
+                    if(url.length>0){
+                        if(url[0]!='/' || url.substr(0,4)!='http'){
+                            url = '/'+url;
+                        }
+                    }
+                    if(pathname==url){
+                        v2.active = true;
+                    }
+                })
+            })
+
+
+
+            this.updateStorage();
+
+        },
         //当前位置
         thisAttr:function () {
             //当前位置
