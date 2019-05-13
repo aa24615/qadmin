@@ -79,4 +79,4 @@
 
 ```
 
-- [查看完整例子](/blob/master/base.html)
+- [查看完整例子](base.html)
