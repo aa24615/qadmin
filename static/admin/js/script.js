@@ -180,8 +180,19 @@ function delCache(){
 }
 
 function msg(code=1,msg='',url='',s=3) {
+    if(typeof code == 'object') {
+        msg = code.msg;
+        url = code.url || '';
+        s = code.s || 3;
+        code = code.code;
+    }
     code = code==1 ? 1 : 2;
     layer.msg(msg, {icon: code,offset: 't',shade: [0.4, '#000']});
+    if(url){
+        setTimeout(function () {
+            window.location.href = url;
+       },s*1000);
+    }
 }
 
 
