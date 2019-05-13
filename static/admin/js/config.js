@@ -12,6 +12,18 @@ var menu =  [
         list:[]
     },
     {
+        name:'登录注册',
+        icon:'&#xe612;',
+        url:'',
+        hidden:false,
+        list:[
+            {
+                name: '管理员登录',
+                url: 'login.html',
+            }
+        ]
+    },
+    {
         name:'用户管理',
         icon:'&#xe612;',
         url:'',

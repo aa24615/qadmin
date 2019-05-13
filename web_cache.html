@@ -52,6 +52,7 @@
                 layui.use('layer',function(){
                     layer.msg('<h2>清除成功</h2> <p id="">页面自动  <a id="href" href="http://blog.php127.com/admin/config/password.html?this=1">跳转</a> 等待时间： <b id="wait">3</b></p> ', {icon: 1,shade:0.5});
                 })
+
                 !(function run(wait){
                     if(wait <= 0) {
                         location.href = "index.html";
@@ -69,5 +70,8 @@
 </div>
 <script src="./static/admin/js/config.js"></script>
 <script src="./static/admin/js/script.js"></script>
+<script type="text/javascript">
+    delCache();
+</script>
 </body>
 </html>
