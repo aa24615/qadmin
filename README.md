@@ -3,6 +3,9 @@
 
 轻量不复杂 简洁不简单
 
+- [演示](http://demo.qadmin.net)
+- [文档](http://docs.qadmin.net)
+
 ## 快速开始
 
 
@@ -80,3 +83,47 @@
 ```
 
 - [查看完整例子](base.html)
+
+### 配置
+
+```javascript
+
+//path /static/admin/js/config.js
+
+//网站名称
+var webname = 'QAdmin';
+
+//菜单列表路径 可以是本地json 也可以是api接口
+var menuUrl = 'data/menu.json';
+
+
+```
+
+### 菜单
+
+```json
+
+[{
+    "name": "顶级菜单",
+    "icon": "&#xe68e;", //layui内置图标
+    "url": "index.html", //地址
+    "hidden": false, 
+    "list": []
+}, {
+    "name": "子级菜单",
+    "icon": "&#xe612;",
+    "url": "", //如果有二级菜单,地址留空
+    "hidden": false, //是否展开
+    "list": [{
+        "name": "二级菜单",
+        "url": "user_index.html"
+    }, {
+        "name": "二级菜单",
+        "url": "user_add.html"
+    }]
+}]
+
+```
+
+### 常用方法
+
