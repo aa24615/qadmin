@@ -179,6 +179,10 @@ function delCache(){
     localStorage.clear();
 }
 
+function msg(code=1,msg='',url='',s=3) {
+    code = code==1 ? 1 : 2;
+    layer.msg(msg, {icon: code,offset: 't',shade: [0.4, '#000']});
+}
 
 
 
