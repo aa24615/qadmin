@@ -72,7 +72,7 @@
 ```
 
 
-### 页脚引入配置与脚本 因为vue需要写在DOM之后
+页脚引入配置与脚本 因为vue需要写在DOM之后
 
 
 ```haml
@@ -84,7 +84,7 @@
 
 - [查看完整例子](base.html)
 
-### 配置
+配置
 
 ```javascript
 
@@ -99,7 +99,7 @@ var menuUrl = 'data/menu.json';
 
 ```
 
-### 菜单
+菜单
 
 ```javascript
 
@@ -134,7 +134,11 @@ delCache(); //清除前端缓存
 msg({code:1,msg:'成功'}); //以对象传入
 msg(1,'成功','/index.html',2); //传入跳转地址与跳转秒数
 
-//
-
 ```
+
+
+### 作者博客
+
+- 读心印 [blog.php127.com](http://blog.php127.com)
+
 
