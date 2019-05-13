@@ -16,32 +16,22 @@ var vue = new Vue({
         //左侧菜单
         let data = sessionStorage.menu;
         if(!data){
-            sessionStorage.menu = JSON.stringify(menu);
-            this.menu = menu;
+            console.log(88)
+            $.get(menuUrl,function (menu) {
+                menu = JSON.parse(menu);
+                console.log(menu,1111);
+                sessionStorage.menu = JSON.stringify(menu);
+                this.menu = menu;
+                this.thisAttr();
+            })
+
         }else{
+            console.log('222')
             this.menu = JSON.parse(data);
+            this.thisAttr();
         }
 
-        //当前位置
-        let addr = [{
-            name:'首页',
-            url:'index.html'
-        }];
-        this.menu.forEach((v,k)=>{
-            v.list.forEach((v2,k2)=>{
-                if(v2.active){
-                    addr.push({
-                        name:v.name,
-                        url:'javascript:;'
-                    })
-                    addr.push({
-                        name:v2.name,
-                        url:v2.url,
-                    })
-                    this.addr = addr;
-                }
-            })
-        })
+
     },
     methods:{
         //记住收展 记住当前
@@ -87,6 +77,29 @@ var vue = new Vue({
         //更新存储
         updateStorage(){
             sessionStorage.menu = JSON.stringify(this.menu);
+        },
+        //当前位置
+        thisAttr:function () {
+            //当前位置
+            let addr = [{
+                name:'首页',
+                url:'index.html'
+            }];
+            this.menu.forEach((v,k)=>{
+                    v.list.forEach((v2,k2)=>{
+                        if(v2.active){
+                        addr.push({
+                            name:v.name,
+                            url:'javascript:;'
+                        })
+                        addr.push({
+                            name:v2.name,
+                            url:v2.url,
+                        })
+                        this.addr = addr;
+                    }
+                })
+            })
         }
     }
 })
@@ -115,9 +128,6 @@ $(document).ready(function() {
         return false;
     });
 })
-
-
-
 
 
 function delCache(){

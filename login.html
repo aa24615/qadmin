@@ -37,6 +37,9 @@
                 $ = layui.jquery;
 
             form.on('submit(login)', function (data) {
+
+                sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
+
                 layer.load({
                     shade: 0.5,
                     time: 0,
