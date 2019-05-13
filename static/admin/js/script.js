@@ -9,7 +9,7 @@ var vue = new Vue({
     data:{
         webname:webname,
         menu:[],
-        addr:[]
+        address:[]
     },
     created:function(){
 
@@ -24,20 +24,20 @@ var vue = new Vue({
                     menu = eval('(' + menu + ')');
                     sessionStorage.menu = JSON.stringify(menu);
                     this.menu = menu;
-                    this.thisAttr();
                     this.thisActive();
+                    this.thisAttr();
                 }
             })
         }else{
             this.menu = JSON.parse(data);
-            this.thisAttr();
             this.thisActive();
+            this.thisAttr();
         }
 
 
     },
     methods:{
-        //记住收展 记住当前
+        //记住收展
         onActive:function (pid,id=false) {
             let data;
             if(id===false){
@@ -68,7 +68,6 @@ var vue = new Vue({
                 })
 
                 data = this.menu[pid].list[id];
-                //data.active = true;
             }
             this.updateStorage();
             if(data.url.length>0){
@@ -84,8 +83,8 @@ var vue = new Vue({
         thisActive:function(){
             let pathname = window.location.pathname;
             let host = window.location.host;
-            let pid = 0;
-            let id = 0;
+            let pid = false;
+            let id = false;
             this.menu.forEach((v,k)=>{
                 let url = v.url;
                 if(url.length>0){
@@ -105,15 +104,17 @@ var vue = new Vue({
                         }
                     }
                     if(pathname==url){
+                        pid = k;
                         id = k2;
                     }
                 })
             })
 
-            if(id>0){
+
+            if(id!==false){
                 this.menu[pid].list[id].active = true;
             }else{
-                if(pid>0){
+                if(pid!==false){
                     this.menu[pid].active = true;
                 }
             }
@@ -124,22 +125,22 @@ var vue = new Vue({
         //当前位置
         thisAttr:function () {
             //当前位置
-            let addr = [{
+            let address = [{
                 name:'首页',
                 url:'index.html'
             }];
             this.menu.forEach((v,k)=>{
                     v.list.forEach((v2,k2)=>{
                         if(v2.active){
-                        addr.push({
+                        address.push({
                             name:v.name,
                             url:'javascript:;'
                         })
-                        addr.push({
+                        address.push({
                             name:v2.name,
                             url:v2.url,
                         })
-                        this.addr = addr;
+                        this.address = address;
                     }
                 })
             })
