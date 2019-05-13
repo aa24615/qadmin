@@ -6,7 +6,7 @@
 ## 快速开始
 
 
-引入所需资源
+在head中引入所需资源
 
 ```html
 
@@ -45,7 +45,8 @@
                     <a href="javascript:;" :class="{active:vo.active}" @click="onActive(index)">
                         <i class="layui-icon" v-html="vo.icon"></i>
                         <span v-text="vo.name"></span>
-                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i> <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
+                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i>
+                        <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
                     </a>
                     <!--子级分类-->
                     <div v-for="vo2,index2 in vo.list">
@@ -57,11 +58,13 @@
         </div>
         <!--右侧-->
         <div class="right">
-        
-        
+            <!--你的页面内容写在这-->
+            <!--你的页面内容写在这-->
+            <!--你的页面内容写在这-->
         </div>
    </div>
 </div>
 
 
 ```
+
