@@ -10,11 +10,11 @@
 
 ```html
 
-    <link rel="stylesheet" href="./static/common/layui/css/layui.css">
-    <link rel="stylesheet" href="./static/admin/css/style.css">
-    <script src="./static/common/layui/layui.js"></script>
-    <script src="./static/common/jquery-3.3.1.min.js"></script>
-    <script src="./static/common/vue.min.js"></script>
+<link rel="stylesheet" href="./static/common/layui/css/layui.css">
+<link rel="stylesheet" href="./static/admin/css/style.css">
+<script src="./static/common/layui/layui.js"></script>
+<script src="./static/common/jquery-3.3.1.min.js"></script>
+<script src="./static/common/vue.min.js"></script>
 
 ```
 
@@ -68,3 +68,15 @@
 
 ```
 
+
+### 页脚引入配置与脚本 因为vue需要写在DOM之后
+
+
+```haml
+
+<script src="./static/admin/js/config.js"></script>
+<script src="./static/admin/js/script.js"></script>
+
+```
+
+- [查看完整例子](/blob/master/base.html)
