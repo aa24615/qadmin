@@ -137,8 +137,10 @@ msg(1,'成功','/index.html',2); //传入跳转地址与跳转秒数
 ```
 
 
-### 作者博客
+### 联系我们
 
-- 读心印 [blog.php127.com](http://blog.php127.com)
+- QQ群: [324098841](http://shang.qq.com/wpa/qunwpa?idkey=6f5462146888da75feaaa1fe1ab3addfcea63f6454548238033c6a91fa610e4e)
+
+- 博客: [blog.php127.com](http://blog.php127.com)
 
 
