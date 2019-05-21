@@ -143,4 +143,6 @@ msg(1,'成功','/index.html',2); //传入跳转地址与跳转秒数
 
 - 博客: [blog.php127.com](http://blog.php127.com)
 
+- 更多开源项目: [github.com/aa24615](https://github.com/aa24615)
+
 
