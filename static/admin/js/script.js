@@ -88,7 +88,7 @@ var vue = new Vue({
             this.menu.forEach((v,k)=>{
                 let url = v.url;
                 if(url.length>0){
-                    if(url[0]!='/' || url.substr(0,4)!='http'){
+                    if(url[0]!='/' && url.substr(0,4)!='http'){
                         url = '/'+url;
                     }
                 }
@@ -99,7 +99,7 @@ var vue = new Vue({
                     let url = v2.url;
 
                     if(url.length>0){
-                        if(url[0]!='/' || url.substr(0,4)!='http'){
+                        if(url[0]!='/' && url.substr(0,4)!='http'){
                             url = '/'+url;
                         }
                     }
@@ -195,7 +195,7 @@ function msg(code=1,msg='',url='',s=3) {
     }
 }
 
-//百度统计,使用时请去掉   
+//百度统计,使用时请去掉
 
 var _hmt = _hmt || [];
 (function() {
