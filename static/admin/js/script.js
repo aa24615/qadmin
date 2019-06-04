@@ -1,4 +1,7 @@
 
+/^http(s*):\/\//.test(location.href) || alert('请先部署到 localhost 下再访问'); window.location.href = 'login.html';
+
+
 layui.use('form', function () {
     var form = layui.form,
         layer = layui.layer;
