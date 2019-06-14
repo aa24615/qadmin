@@ -1,10 +1,13 @@
 # QAdmin轻量级后台模板
+
 基于layui框架与Vue.js构建
 
 轻量不复杂 简洁不简单
 
 - [演示](http://demo.qadmin.net)
 - [文档](http://docs.qadmin.net)
+- [列新日志](http://docs.qadmin.net/1104757)
+- [常见问题](http://docs.qadmin.net/1114310)
 
 ## 快速开始
 
@@ -12,19 +15,16 @@
 在head中引入所需资源
 
 ```html
-
 <link rel="stylesheet" href="./static/common/layui/css/layui.css">
 <link rel="stylesheet" href="./static/admin/css/style.css">
 <script src="./static/common/layui/layui.js"></script>
 <script src="./static/common/jquery-3.3.1.min.js"></script>
 <script src="./static/common/vue.min.js"></script>
-
 ```
 
 布局
 
 ```html
-
 <div id="app">
     <!--顶栏-->
     <header>
@@ -62,13 +62,12 @@
         <!--右侧-->
         <div class="right">
             <!--你的页面内容写在这-->
-            <!--你的页面内容写在这-->
+            <!--在这里使用layui基本组件-->
+            <!--请详情了解layui基础 https://www.layui.com/doc/ --> 
             <!--你的页面内容写在这-->
         </div>
    </div>
 </div>
-
-
 ```
 
 
@@ -76,10 +75,8 @@
 
 
 ```haml
-
 <script src="./static/admin/js/config.js"></script>
 <script src="./static/admin/js/script.js"></script>
-
 ```
 
 - [查看完整例子](base.html)
@@ -87,8 +84,7 @@
 配置
 
 ```javascript
-
-//path /static/admin/js/config.js
+//位于js目录 /static/admin/js/config.js
 
 //网站名称
 var webname = 'QAdmin';
@@ -96,13 +92,15 @@ var webname = 'QAdmin';
 //菜单列表路径 可以是本地json 也可以是api接口
 var menuUrl = 'data/menu.json';
 
-
+//当然你也可以不写在config.js中
+//你可以把 <script src="./static/admin/js/config.js"></script>
+//把以上代码在script.js这前
 ```
+- 菜单不生效怎么办?
 
-菜单
+菜单配置格式
 
 ```javascript
-
 [{
     "name": "顶级菜单",
     "icon": "&#xe68e;", //layui内置图标
@@ -122,18 +120,48 @@ var menuUrl = 'data/menu.json';
         "url": "user_add.html"
     }]
 }]
+```
+使用php生成菜单api
+```php
+<?php
+$menu = [
+    [
+        'name'=>'顶级菜单',
+        'icon'=>'&#xe68e;',
+        'url'=>'/index.html',
+        'hidden'=>false,
+        'list'=>[]
+    ],
+    [
+        'name'=>'子级菜单',
+        'icon'=>'&#xe68e;',
+        'url'=>'',
+        'hidden'=>false,
+        'list'=>[
+            [
+                'name'=>'二级菜单',
+                'url'=>'/user_index.html',
+            ],
+            [
+                'name'=>'二级菜单',
+                'url'=>'/user_add.html',
+            ]           
+        ]
+    ]
+];
+header('Content-Type:application/json; charset=utf-8');
+echo json_encode($menu);
 
+?>
 ```
 
 ### 常用方法
-
 ```javascript
 delCache(); //清除前端缓存
 
 //提示框
 msg({code:1,msg:'成功'}); //以对象传入
 msg(1,'成功','/index.html',2); //传入跳转地址与跳转秒数
-
 ```
 
 
