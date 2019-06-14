@@ -96,7 +96,7 @@ var menuUrl = 'data/menu.json';
 //你可以把 <script src="./static/admin/js/config.js"></script>
 //把以上代码在script.js这前
 ```
-- 菜单不生效怎么办?
+- [遇到菜单不生效,请点击这里>](http://docs.qadmin.net/1114311)
 
 菜单配置格式
 
