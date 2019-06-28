@@ -12,11 +12,9 @@
     "list": [{
         "name": "layui基本组件",
         "url": "pages_component.html",
-        "target": "_blank"
     },{
         "name": "layui内置模块",
-        "url": "https://www.layui.com/doc/modules/layer.html",
-        "target": '_blank'
+        "url": "pages_model.html"
     }]
 }, {
     "name": "用户管理",
