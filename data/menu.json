@@ -15,6 +15,9 @@
     },{
         "name": "layui内置模块",
         "url": "pages_model.html"
+    },{
+        "name": "提示框",
+        "url": "pages_msg.html"
     }]
 }, {
     "name": "用户管理",
