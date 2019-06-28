@@ -1,5 +1,8 @@
 
-/^http(s*):\/\//.test(location.href) || alert('请先部署到 localhost 下再访问'); window.location.href = 'login.html';
+if(!/^http(s*):\/\//.test(location.href)){
+    alert('请先部署到 localhost 下再访问');
+    window.location.href = 'login.html';
+}
 
 
 layui.use('form', function () {
@@ -208,8 +211,8 @@ function msg(code=1,msg='',url='',s=3) {
     }
 }
 
-//百度统计,使用时请去掉
 
+//百度统计,使用时请去掉
 var _hmt = _hmt || [];
 (function() {
     var hm = document.createElement("script");

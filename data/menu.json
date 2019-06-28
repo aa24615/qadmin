@@ -4,6 +4,18 @@
     "url": "index.html",
     "hidden": false,
     "list": []
+},{
+    "name": "基本组件",
+    "icon": "&#xe612;",
+    "url": "",
+    "hidden": false,
+    "list": [{
+        "name": "layui基本组件",
+        "url": "pages_component.html"
+    },{
+        "name": "layui内置模块",
+        "url": "https://www.layui.com/doc/modules/layer.html"
+    }]
 }, {
     "name": "用户管理",
     "icon": "&#xe612;",

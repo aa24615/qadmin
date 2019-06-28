@@ -28,18 +28,25 @@
         </div>
         <div class="layui-form-item">
             <button style="width: 100%" class="layui-btn" lay-submit lay-filter="login">立即登录</button>
+
         </div>
     </form>
 
     <script>
+
 
         layui.use('form', function () {
             var form = layui.form,
                 layer = layui.layer,
                 $ = layui.jquery;
 
-            form.on('submit(login)', function (data) {
 
+            layer.tips('无需输入,请点击登录进入后台<br/>这个tips可随时去除!', '.layui-btn', {
+                tips: [3, '#333'],
+                time: 0
+            });
+
+            form.on('submit(login)', function (data) {
                 sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
 
                 layer.load({
@@ -48,7 +55,7 @@
                 });
                 setTimeout(function () {
                     window.location.href = 'index.html';
-                },3000)
+                },1000)
 
                 return false;
             });
