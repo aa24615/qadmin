@@ -10,18 +10,16 @@ layui.use('form', function () {
 var vue = new Vue({
     el:'#app',
     data:{
-        webname:webname,
+        webname:config.webname,
         menu:[],
         address:[]
     },
     created:function(){
 
         //加载左侧菜单
-        let data = sessionStorage.menu;
-        if(!data){
-            console.log(88)
+        if(config.debug){
             $.ajax({
-                url: menuUrl,
+                url: config.menuUrl,
                 dataType: 'text',
                 success:  (menu) => {
                     menu = eval('(' + menu + ')');
@@ -31,13 +29,26 @@ var vue = new Vue({
                     this.thisAttr();
                 }
             })
-        }else{
-            this.menu = JSON.parse(data);
-            this.thisActive();
-            this.thisAttr();
+        }else {
+            let data = sessionStorage.menu;
+            if (!data) {
+                $.ajax({
+                    url: config.menuUrl,
+                    dataType: 'text',
+                    success: (menu) => {
+                        menu = eval('(' + menu + ')');
+                        sessionStorage.menu = JSON.stringify(menu);
+                        this.menu = menu;
+                        this.thisActive();
+                        this.thisAttr();
+                    }
+                })
+            } else {
+                this.menu = JSON.parse(data);
+                this.thisActive();
+                this.thisAttr();
+            }
         }
-
-
     },
     methods:{
         //记住收展
@@ -189,7 +200,7 @@ function msg(code=1,msg='',url='',s=3) {
         code = code.code;
     }
     code = code==1 ? 1 : 2;
-    layer.msg(msg, {icon: code,offset: 't',shade: [0.4, '#000']});
+    layer.msg(msg, {icon: code,offset: config.layerMsg.offset || 't',shade: config.layerMsg.shade || [0.4, '#000']});
     if(url){
         setTimeout(function () {
             window.location.href = url;

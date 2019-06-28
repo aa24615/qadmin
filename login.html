@@ -16,11 +16,11 @@
     <h2>QAdmin后台模板</h2>
     <form class="layui-form" method="post" target="_blank" action="">
         <div class="layui-form-item">
-            <input type="username" name="user" placeholder="用户名(随意输入)" required lay-verify="required"  class="layui-input">
+            <input type="username" name="user" placeholder="用户名" class="layui-input">
             <i class="layui-icon input-icon">&#xe66f;</i>
         </div>
         <div class="layui-form-item">
-            <input type="password" name="pwd" placeholder="密码(随意输入)" required lay-verify="required"  class="layui-input">
+            <input type="password" name="pwd" placeholder="密码"  class="layui-input">
             <i class="layui-icon input-icon">&#xe673;</i>
         </div>
         <div class="layui-form-item">
@@ -46,7 +46,10 @@
                     shade: 0.5,
                     time: 0,
                 });
-                window.location.href = 'index.html';
+                setTimeout(function () {
+                    window.location.href = 'index.html';
+                },3000)
+
                 return false;
             });
         });
