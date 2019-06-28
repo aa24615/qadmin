@@ -88,7 +88,17 @@ var vue = new Vue({
             }
             this.updateStorage();
             if(data.url.length>0){
-                window.location.href = data.url;
+                if(data.target){
+                    if(data.target=='_blank'){
+                        window.open(data.url);
+                    }else{
+                        window.location.href = data.url;
+                    }
+
+                }else{
+                    window.location.href = data.url;
+                }
+
             }
         },
 

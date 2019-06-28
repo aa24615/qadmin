@@ -6,15 +6,17 @@
     "list": []
 },{
     "name": "基本组件",
-    "icon": "&#xe612;",
+    "icon": "&#xe653;",
     "url": "",
     "hidden": false,
     "list": [{
         "name": "layui基本组件",
-        "url": "pages_component.html"
+        "url": "pages_component.html",
+        "target": "_blank"
     },{
         "name": "layui内置模块",
-        "url": "https://www.layui.com/doc/modules/layer.html"
+        "url": "https://www.layui.com/doc/modules/layer.html",
+        "target": '_blank'
     }]
 }, {
     "name": "用户管理",
@@ -82,10 +84,12 @@
     "name": "开发者官网",
     "icon": "&#xe65f;",
     "url": "http://www.qadmin.net/",
+    "target": "_blank",
     "list": []
 }, {
     "name": "开发文档",
     "icon": "&#xe655;",
     "url": "http://docs.qadmin.net/",
+    "target": "_blank",
     "list": []
 }]
