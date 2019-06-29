@@ -6,8 +6,19 @@
 
 - [演示](http://demo.qadmin.net)
 - [文档](http://docs.qadmin.net)
-- [列新日志](http://docs.qadmin.net/1104757)
 - [常见问题](http://docs.qadmin.net/1114310)
+
+## 最新版本
+
+####  **V1.2** `2019.06.28`
+
+1. 【新增】调试模式,开启动左侧菜单前端不缓存
+2. 【新增】提示框全局配置
+3. 【新增】layui组件/模块等说明
+4. 【优化】登录页快速进入后台演示
+
+- [更新日志](http://docs.qadmin.net/1104757)
+- [升级指导](http://docs.qadmin.net/1141852)
 
 ## 快速开始
 
@@ -86,11 +97,23 @@
 ```javascript
 //位于js目录 /static/admin/js/config.js
 
-//网站名称
-var webname = 'QAdmin';
+var config = {
 
-//菜单列表路径 可以是本地json 也可以是api接口
-var menuUrl = 'data/menu.json';
+    //调试模式 (开启后左侧菜单不缓存,菜单收展失效,打开渲染速度会变慢)
+    debug: true,
+
+    //网站名称 (左上角显示的文字LOGO)
+    webname: 'QAdmin',
+
+    //菜单列表路径 (可以是本地json,也可以是api接口)
+    menuUrl: 'data/menu.json',
+
+    //layer全局提示层
+    layerMsg: {
+        offset: 't', //坐标 (详细说明 https://www.layui.com/doc/modules/layer.html#offset)
+        shade: [0.4, '#000'] //遮罩 (详细说明 https://www.layui.com/doc/modules/layer.html#shade)
+    }
+}
 
 //当然你也可以不写在config.js中
 //你可以把 <script src="./static/admin/js/config.js"></script>
