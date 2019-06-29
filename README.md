@@ -129,6 +129,7 @@ var config = {
     "name": "顶级菜单",
     "icon": "&#xe68e;", //layui内置图标
     "url": "index.html", //地址
+    "target": "_blank", //是否新窗口打开,非_blank或无此配置则本窗打开
     "hidden": false, 
     "list": []
 }, {
