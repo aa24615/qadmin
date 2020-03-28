@@ -1,13 +1,14 @@
 <template>
 
-    这是左边
+
+
+    <div>222</div>
 </template>
 
 <script>
     export default {
         name: "Left"
     }
-
 
 </script>
 
