@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>后台首页 - QAdmin后台模板</title>
+    <link rel="stylesheet" href="./static/common/layui/css/layui.css">
+    <link rel="stylesheet" href="./static/admin/css/style.css">
+    <script src="./static/common/layui/layui.js"></script>
+    <script src="./static/common/jquery-3.3.1.min.js"></script>
+    <script src="./static/common/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--顶栏-->
+    <header>
+        <h1 v-text="webname"></h1>
+        <div class="breadcrumb">
+            <i class="layui-icon">&#xe715;</i>
+            <ul>
+                <li v-for="vo in address">
+                    <a  v-text="vo.name" :href="vo.url" ></a> <span>/</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main">
+        <!--左栏-->
+        <div class="left">
+            <ul class="cl" >
+                <!--顶级分类-->
+                <li v-for="vo,index in menu" :class="{hidden:vo.hidden}">
+                    <a href="javascript:;"  :class="{active:vo.active}"  @click="onActive(index)">
+                        <i class="layui-icon" v-html="vo.icon"></i>
+                        <span v-text="vo.name"></span>
+                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i> <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
+                    </a>
+                    <!--子级分类-->
+                    <div v-for="vo2,index2 in vo.list">
+                        <a href="javascript:;" :class="{active:vo2.active}" @click="onActive(index,index2)" v-text="vo2.name"></a>
+                        <i v-show="vo2.active" class="layui-icon active">&#xe623;</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--右侧-->
+        <div class="right" id="app2">
+
+            <div v-if="run" class="layui-progress  layui-progress-big" lay-showPercent="yes">
+                <div class="layui-progress-bar layui-bg-red" :style="{width:d+'%'}">{{d}}%</div>
+            </div>
+
+            <table class="layui-table layui-form">
+                <colgroup>
+                    <col width="50">
+                    <col width="300">
+                    <col width="300">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                    <col width="100">
+                    <col width="300">
+                    <col width="150">
+                    <col width="100">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th><input lay-filter="all" type="checkbox" lay-skin="primary"></th>
+                    <th>表名</th>
+                    <th>表说明</th>
+                    <th>引擎</th>
+                    <th>编码</th>
+                    <th>数据量</th>
+                    <th>数据大小</th>
+                    <th>创建时间</th>
+                    <th>备份状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr v-for="(vo,i) in list">
+                    <td><input type="checkbox" lay-filter="vo" :data-id="i" v-model="vo.Selected" :value="vo.Selected" lay-skin="primary" ></td>
+                    <td>{{vo.Name}}</td>
+                    <td>{{vo.Comment}}</td>
+                    <td>{{vo.Engine}}</td>
+                    <td>{{vo.Collation}}</td>
+                    <td>{{vo.Rows}}</td>
+                    <td>{{vo.Data_length}}</td>
+                    <td>{{vo.Create_time}}</td>
+                    <td>{{vo.Is}}</td>
+                    <td><a @click.prevent="backup(i,vo.Url)"  :href="vo.Url" >备份</a></td>
+                </tr>
+
+
+                </tbody>
+
+                <tfoot>
+
+                <tr>
+                    <td colspan="99" >
+                        <input type="checkbox" lay-filter="single" v-model="single" lay-skin="primary" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;所有表合并成一个文件
+                        <a href="javascript:;" style="float: right;"  @click="auto" class="layui-btn layui-btn-normal">自动备份</a>
+                        <a href="javascript:;" style="float: right;  margin-right: 20px;" @click="backups" class="layui-btn">一键备份</a>
+                    </td>
+                </tr>
+
+                </tfoot>
+            </table>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    var vue = new Vue({
+        el: '#app2',
+        data: {
+            list: [
+                {
+                    "Selected":false,
+                    "Name":"iycms_admin",
+                    "Comment":"管理员表",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"0",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:08:49",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_admin&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_article",
+                    "Comment":"文章表",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"9",
+                    "Data_length":"80KB",
+                    "Create_time":"2018-04-23 00:08:49",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_article&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_category",
+                    "Comment":"文章栏目",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"15",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:08:49",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_category&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_flink",
+                    "Comment":"友情链接",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"5",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:08:50",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_flink&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_info",
+                    "Comment":"个人资料",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"19",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:08:51",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_info&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_keys",
+                    "Comment":"TAG表",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"26",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:08:52",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_keys&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_leave",
+                    "Comment":"留言表",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"60",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-28 12:42:22",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_leave&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_menu",
+                    "Comment":"后台菜单",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"51",
+                    "Data_length":"48KB",
+                    "Create_time":"2018-04-23 00:08:52",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_menu&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_nav",
+                    "Comment":"前台导航",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"5",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:08:54",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_nav&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_region",
+                    "Comment":"城市地区",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"3461",
+                    "Data_length":"336KB",
+                    "Create_time":"2018-04-23 00:08:54",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_region&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_skills",
+                    "Comment":"专业技能",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"66",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:09:50",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_skills&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_user",
+                    "Comment":"用户表",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"11",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-28 12:44:59",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_user&dir=20190401_2718"},
+                {
+                    "Selected":false,
+                    "Name":"iycms_work",
+                    "Comment":"工作经历",
+                    "Engine":"InnoDB",
+                    "Collation":"utf8_general_ci",
+                    "Rows":"3",
+                    "Data_length":"16KB",
+                    "Create_time":"2018-04-23 00:09:51",
+                    "Is":"未备份",
+                    "Url":"/admin/mysql/backup.html?table=iycms_work&dir=20190401_2718"},
+            ],
+            all:false,
+            single:true,
+            c:0,
+            t:0,
+            d:0,
+            run:false,
+        },
+        methods:{
+            backups:function(){
+                if(this.count()>0){
+                    this.c = this.count();
+                    this.t = 0;
+                    this.d = 0;
+                }else{
+                    layer.msg("你还未选择要备份的表",function(){}); //总个数
+                    return false;
+                }
+
+                this.run = true;
+
+                !(function h(i,self) {
+                    if(i>=self.list.length){
+                        setTimeout(function(){
+                            layui.layer.msg("备份完成",{icon:1})
+                            self.run = false;
+                        },1000)
+                        return false;
+                    }
+                    if(self.list[i].Selected){
+                        self.list[i].Is="正在备份...";
+                        var url = self.single ? self.list[i].Url+"&single=1" : self.list[i].Url;
+                        $.get(url,function(e){
+                            if(e.code==1){
+                                self.list[i].Selected = false;
+                                self.list[i].Is="√备份成功";
+                            }else{
+                                self.list[i].Is="×备份失败";
+                            }
+                            self.t++;
+                            self.d = self.t/self.c*100;
+                            h((i+1),self);
+                            setTimeout(function(){
+                                layui.form.render();
+                            },5)
+                        })
+                    }else{
+                        h((i+1),self);
+                    }
+                })(0,this);
+            },
+            backup:function(i,url){
+                var self = this;
+                var url = self.single ? url+"&single=1" : url;
+                self.list[i].Is="正在备份...";
+                $.get(url,function(e){
+                    if(e.code==1){
+                        self.list[i].Selected = false;
+                        self.list[i].Is="√备份成功";
+                    }else{
+                        self.list[i].Is="×备份失败";
+                    }
+                })
+            },
+            count:function(){ //计算选中的个数
+                for (var i=0,c=0;i<this.list.length;i++) {
+                    if(this.list[i].Selected){
+                        c++
+                    }
+                }
+                return c;
+            },
+            auto:function(){
+                layui.layer.msg("开发中...",function(){});
+            }
+        }
+    })
+
+    layui.use('form', function () {
+        var form = layui.form, layer = layui.layer, $ = layui.jquery;
+        form.on('checkbox(all)', function(data){
+            for(var i=0;i<vue.list.length;i++){
+                vue.list[i].Selected = data.elem.checked;
+            }
+            setTimeout(function(){
+                form.render();
+            },5)
+
+        });
+
+        form.on('checkbox(vo)', function(data){
+            var id = $(data.elem).attr("data-id");
+            for(var i=0;i<vue.list.length;i++){
+                if(i==id){
+                    vue.list[i].Selected = data.elem.checked;
+                }
+            }
+        });
+
+        form.on('checkbox(single)', function(data){
+            vue.single = data.elem.checked;
+        });
+
+
+        form.on('switch(state)', function(data) {
+            var id = $(data.elem).attr("data-id");
+            $.ajax({
+                url: "/admin/mysql/state.html",
+                data: {
+                    id: id,
+                },
+                type: "get",
+                dataType: "json",
+                success: function(e) {
+                    if (e.code== 1) {
+                        layer.msg(e.msg, {
+                            icon: 1
+                        });
+                    } else {
+                        layer.msg(e.msg, {
+                            icon: 2,
+                            shade: 0.5,
+                            time: 2000,
+                            shadeClose: true
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script src="./static/admin/js/config.js"></script>
+<script src="./static/admin/js/script.js"></script>
+</body>
+</html>

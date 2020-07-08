@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>栏目管理 - QAdmin后台模板</title>
+    <link rel="stylesheet" href="./static/common/layui/css/layui.css">
+    <link rel="stylesheet" href="./static/admin/css/style.css">
+    <script src="./static/common/jquery-3.3.1.min.js"></script>
+    <script src="./static/common/layui/layui.js"></script>
+    <script src="./static/common/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--顶栏-->
+    <header>
+        <h1 v-text="webname"></h1>
+        <div class="breadcrumb">
+            <i class="layui-icon">&#xe715;</i>
+            <ul>
+                <li v-for="vo in address">
+                    <a  v-text="vo.name" :href="vo.url" ></a> <span>/</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main">
+        <!--左栏-->
+        <div class="left">
+            <ul class="cl" >
+                <!--顶级分类-->
+                <li v-for="vo,index in menu" :class="{hidden:vo.hidden}">
+                    <a href="javascript:;"  :class="{active:vo.active}"  @click="onActive(index)">
+                        <i class="layui-icon" v-html="vo.icon"></i>
+                        <span v-text="vo.name"></span>
+                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i> <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
+                    </a>
+                    <!--子级分类-->
+                    <div v-for="vo2,index2 in vo.list">
+                        <a href="javascript:;" :class="{active:vo2.active}" @click="onActive(index,index2)" v-text="vo2.name"></a>
+                        <i v-show="vo2.active" class="layui-icon active">&#xe623;</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--右侧-->
+        <div class="right">
+            <a href="type_add.html" class="layui-btn"><i class="layui-icon">&#xe654;</i>添加栏目</a>
+            <table class="layui-table layui-form">
+                <colgroup>
+                    <col width="80">
+                    <col width="80">
+                    <col width="150">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col>
+                    <col width="150">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>排序</th>
+                    <th>名称</th>
+                    <th>英文名</th>
+                    <th>显示</th>
+
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="id9">
+                    <td>9</td>
+                    <td>11</td>
+                    <td>前端</td>
+                    <td>12</td>
+                    <td><input data-id="9"  lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/9.html">修改</a> | <a class="del" data-id=".id9"  href="/admin/category/del/id/9.html">删除</a></td>
+                </tr>
+                <tr class="id9">
+                    <td>11</td>
+                    <td>1</td>
+                    <td>|----------html/css</td>
+                    <td>html_css</td>
+                    <td><input type="checkbox" data-id="11"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/11.html">修改</a> | <a class="del" data-id=".id11" href="/admin/category/del/id/11.html">删除</a></td>
+                </tr>
+                <tr class="id9">
+                    <td>16</td>
+                    <td>2</td>
+                    <td>|----------javascript</td>
+                    <td>javascript</td>
+                    <td><input type="checkbox" data-id="16"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/16.html">修改</a> | <a class="del" data-id=".id16" href="/admin/category/del/id/16.html">删除</a></td>
+                </tr>
+                <tr class="id9">
+                    <td>20</td>
+                    <td>3</td>
+                    <td>|----------jquery</td>
+                    <td>jquery</td>
+                    <td><input type="checkbox" data-id="20"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/20.html">修改</a> | <a class="del" data-id=".id20" href="/admin/category/del/id/20.html">删除</a></td>
+                </tr>
+                <tr class="id9">
+                    <td>15</td>
+                    <td>4</td>
+                    <td>|----------vue</td>
+                    <td>vue</td>
+                    <td><input type="checkbox" data-id="15"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/15.html">修改</a> | <a class="del" data-id=".id15" href="/admin/category/del/id/15.html">删除</a></td>
+                </tr>
+                <tr class="id9">
+                    <td>12</td>
+                    <td>5</td>
+                    <td>|----------angular</td>
+                    <td>angular</td>
+                    <td><input type="checkbox" data-id="12"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/12.html">修改</a> | <a class="del" data-id=".id12" href="/admin/category/del/id/12.html">删除</a></td>
+                </tr>
+                <tr class="id9">
+                    <td>25</td>
+                    <td>99</td>
+                    <td>|----------小程序</td>
+                    <td>xcx</td>
+                    <td><input type="checkbox" data-id="25"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/25.html">修改</a> | <a class="del" data-id=".id25" href="/admin/category/del/id/25.html">删除</a></td>
+                </tr>
+                <tr class="id13">
+                    <td>13</td>
+                    <td>22</td>
+                    <td>后端</td>
+                    <td>1111111111111</td>
+                    <td><input data-id="13"  lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/13.html">修改</a> | <a class="del" data-id=".id13"  href="/admin/category/del/id/13.html">删除</a></td>
+                </tr>
+                <tr class="id13">
+                    <td>17</td>
+                    <td>1</td>
+                    <td>|----------php</td>
+                    <td>php</td>
+                    <td><input type="checkbox" data-id="17"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/17.html">修改</a> | <a class="del" data-id=".id17" href="/admin/category/del/id/17.html">删除</a></td>
+                </tr>
+                <tr class="id13">
+                    <td>14</td>
+                    <td>2</td>
+                    <td>|----------node.js</td>
+                    <td>nodejs</td>
+                    <td><input type="checkbox" data-id="14"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/14.html">修改</a> | <a class="del" data-id=".id14" href="/admin/category/del/id/14.html">删除</a></td>
+                </tr>
+                <tr class="id13">
+                    <td>18</td>
+                    <td>3</td>
+                    <td>|----------python</td>
+                    <td>python</td>
+                    <td><input type="checkbox" data-id="18"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/18.html">修改</a> | <a class="del" data-id=".id18" href="/admin/category/del/id/18.html">删除</a></td>
+                </tr>
+                <tr class="id13">
+                    <td>24</td>
+                    <td>4</td>
+                    <td>|----------linux/shell</td>
+                    <td>linux_shell</td>
+                    <td><input type="checkbox" data-id="24"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/24.html">修改</a> | <a class="del" data-id=".id24" href="/admin/category/del/id/24.html">删除</a></td>
+                </tr>
+                <tr class="id19">
+                    <td>19</td>
+                    <td>33</td>
+                    <td>数据库</td>
+                    <td>sql</td>
+                    <td><input data-id="19"  lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/19.html">修改</a> | <a class="del" data-id=".id19"  href="/admin/category/del/id/19.html">删除</a></td>
+                </tr>
+                <tr class="id19">
+                    <td>21</td>
+                    <td>1</td>
+                    <td>|----------mysql</td>
+                    <td>mysql</td>
+                    <td><input type="checkbox" data-id="21"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/21.html">修改</a> | <a class="del" data-id=".id21" href="/admin/category/del/id/21.html">删除</a></td>
+                </tr>
+                <tr class="id19">
+                    <td>22</td>
+                    <td>2</td>
+                    <td>|----------redis</td>
+                    <td>redis</td>
+                    <td><input type="checkbox" data-id="22"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/22.html">修改</a> | <a class="del" data-id=".id22" href="/admin/category/del/id/22.html">删除</a></td>
+                </tr>
+                <tr class="id19">
+                    <td>23</td>
+                    <td>3</td>
+                    <td>|----------mongodb</td>
+                    <td>mongodb</td>
+                    <td><input type="checkbox" data-id="23"  lay-filter="state" checked lay-text="开启|关闭" lay-skin="switch"></td>
+
+                    <td><a href="/admin/category/update/id/23.html">修改</a> | <a class="del" data-id=".id23" href="/admin/category/del/id/23.html">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('form', function () {
+        var form = layui.form, layer = layui.layer, $ = layui.jquery;
+
+        form.on('switch(state)', function(data) {
+            var id = $(data.elem).attr("data-id");
+            $.ajax({
+                url: "/admin/category/state/type/state.html",
+                data: {
+                    id: id,
+                },
+                type: "get",
+                dataType: "json",
+                success: function(e) {
+                    if (e.code== 1) {
+                        layer.msg(e.msg, {
+                            icon: 1
+                        });
+                    } else {
+                        layer.msg(e.msg, {
+                            icon: 2,
+                            shade: 0.5,
+                            time: 2000,
+                            shadeClose: true
+                        });
+                    }
+                }
+            });
+        });
+
+    });
+</script>
+<script src="./static/admin/js/config.js"></script>
+<script src="./static/admin/js/script.js"></script>
+</body>
+</html>
+

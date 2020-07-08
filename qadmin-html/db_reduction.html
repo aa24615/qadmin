@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>后台首页 - QAdmin后台模板</title>
+    <link rel="stylesheet" href="./static/common/layui/css/layui.css">
+    <link rel="stylesheet" href="./static/admin/css/style.css">
+    <script src="./static/common/layui/layui.js"></script>
+    <script src="./static/common/jquery-3.3.1.min.js"></script>
+    <script src="./static/common/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--顶栏-->
+    <header>
+        <h1 v-text="webname"></h1>
+        <div class="breadcrumb">
+            <i class="layui-icon">&#xe715;</i>
+            <ul>
+                <li v-for="vo in address">
+                    <a  v-text="vo.name" :href="vo.url" ></a> <span>/</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main" id="app">
+        <!--左栏-->
+        <div class="left">
+            <ul class="cl" >
+                <!--顶级分类-->
+                <li v-for="vo,index in menu" :class="{hidden:vo.hidden}">
+                    <a href="javascript:;"  :class="{active:vo.active}"  @click="onActive(index)">
+                        <i class="layui-icon" v-html="vo.icon"></i>
+                        <span v-text="vo.name"></span>
+                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i> <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
+                    </a>
+                    <!--子级分类-->
+                    <div v-for="vo2,index2 in vo.list">
+                        <a href="javascript:;" :class="{active:vo2.active}" @click="onActive(index,index2)" v-text="vo2.name"></a>
+                        <i v-show="vo2.active" class="layui-icon active">&#xe623;</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--右侧-->
+        <div class="right">
+
+
+
+            <table class="layui-table layui-form">
+                <colgroup>
+                    <col width="100">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>备份名称</th>
+                    <th>文件数量</th>
+                    <th>大小</th>
+                    <th>备份时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="id20190131_2168">
+                    <td>20190131_2168  </td>
+                    <td>1 <a @click.prevent="get_table('20190131_2168')" href="javascript:;" >详情</a></td>
+                    <td>5.3KB</td>
+                    <td>2019-01-31 22:42:24</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20190131_2168.html">还原</a> |
+                        <a download="20190131_2168.zip" href="/admin/mysql/download/dir/20190131_2168.html">下载</a> |
+                        <a class="del" data-id=".id20190131_2168"  href="/admin/mysql/del/dir/20190131_2168.html">删除</a></td>
+                </tr>
+                <tr class="id20180810_9006">
+                    <td>20180810_9006  </td>
+                    <td>1 <a @click.prevent="get_table('20180810_9006')" href="javascript:;" >详情</a></td>
+                    <td>428KB</td>
+                    <td>2018-08-10 11:23:49</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20180810_9006.html">还原</a> |
+                        <a download="20180810_9006.zip" href="/admin/mysql/download/dir/20180810_9006.html">下载</a> |
+                        <a class="del" data-id=".id20180810_9006"  href="/admin/mysql/del/dir/20180810_9006.html">删除</a></td>
+                </tr>
+                <tr class="id20180423_1672">
+                    <td>20180423_1672  </td>
+                    <td>1 <a @click.prevent="get_table('20180423_1672')" href="javascript:;" >详情</a></td>
+                    <td>382KB</td>
+                    <td>2018-04-23 00:06:47</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20180423_1672.html">还原</a> |
+                        <a download="20180423_1672.zip" href="/admin/mysql/download/dir/20180423_1672.html">下载</a> |
+                        <a class="del" data-id=".id20180423_1672"  href="/admin/mysql/del/dir/20180423_1672.html">删除</a></td>
+                </tr>
+                <tr class="id20190112_7292">
+                    <td>20190112_7292  </td>
+                    <td>1 <a @click.prevent="get_table('20190112_7292')" href="javascript:;" >详情</a></td>
+                    <td>455KB</td>
+                    <td>2019-01-12 02:31:02</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20190112_7292.html">还原</a> |
+                        <a download="20190112_7292.zip" href="/admin/mysql/download/dir/20190112_7292.html">下载</a> |
+                        <a class="del" data-id=".id20190112_7292"  href="/admin/mysql/del/dir/20190112_7292.html">删除</a></td>
+                </tr>
+                <tr class="id20181124_8228">
+                    <td>20181124_8228  </td>
+                    <td>1 <a @click.prevent="get_table('20181124_8228')" href="javascript:;" >详情</a></td>
+                    <td>450KB</td>
+                    <td>2018-11-24 15:51:11</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20181124_8228.html">还原</a> |
+                        <a download="20181124_8228.zip" href="/admin/mysql/download/dir/20181124_8228.html">下载</a> |
+                        <a class="del" data-id=".id20181124_8228"  href="/admin/mysql/del/dir/20181124_8228.html">删除</a></td>
+                </tr>
+                <tr class="id20190120_6936">
+                    <td>20190120_6936  </td>
+                    <td>1 <a @click.prevent="get_table('20190120_6936')" href="javascript:;" >详情</a></td>
+                    <td>456KB</td>
+                    <td>2019-01-20 22:10:18</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20190120_6936.html">还原</a> |
+                        <a download="20190120_6936.zip" href="/admin/mysql/download/dir/20190120_6936.html">下载</a> |
+                        <a class="del" data-id=".id20190120_6936"  href="/admin/mysql/del/dir/20190120_6936.html">删除</a></td>
+                </tr>
+                <tr class="id20181029_7943">
+                    <td>20181029_7943  </td>
+                    <td>1 <a @click.prevent="get_table('20181029_7943')" href="javascript:;" >详情</a></td>
+                    <td>439KB</td>
+                    <td>2018-10-29 09:28:06</td>
+                    <td>
+                        <a href="/admin/mysql/update/id/20181029_7943.html">还原</a> |
+                        <a download="20181029_7943.zip" href="/admin/mysql/download/dir/20181029_7943.html">下载</a> |
+                        <a class="del" data-id=".id20181029_7943"  href="/admin/mysql/del/dir/20181029_7943.html">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<script src="./static/admin/js/config.js"></script>
+<script src="./static/admin/js/script.js"></script>
+</body>
+</html>

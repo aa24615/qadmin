@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>后台首页 - QAdmin后台模板</title>
+    <link rel="stylesheet" href="./static/common/layui/css/layui.css">
+    <link rel="stylesheet" href="./static/admin/css/style.css">
+    <script src="./static/common/layui/layui.js"></script>
+    <script src="./static/common/jquery-3.3.1.min.js"></script>
+    <script src="./static/common/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--顶栏-->
+    <header>
+        <h1 v-text="webname"></h1>
+        <div class="breadcrumb">
+            <i class="layui-icon">&#xe715;</i>
+            <ul>
+                <li v-for="vo in address">
+                    <a  v-text="vo.name" :href="vo.url" ></a> <span>/</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main" id="app">
+        <!--左栏-->
+        <div class="left">
+            <ul class="cl" >
+                <!--顶级分类-->
+                <li v-for="vo,index in menu" :class="{hidden:vo.hidden}">
+                    <a href="javascript:;"  :class="{active:vo.active}"  @click="onActive(index)">
+                        <i class="layui-icon" v-html="vo.icon"></i>
+                        <span v-text="vo.name"></span>
+                        <i class="layui-icon arrow" v-show="vo.url.length==0">&#xe61a;</i> <i v-show="vo.active" class="layui-icon active">&#xe623;</i>
+                    </a>
+                    <!--子级分类-->
+                    <div v-for="vo2,index2 in vo.list">
+                        <a href="javascript:;" :class="{active:vo2.active}" @click="onActive(index,index2)" v-text="vo2.name"></a>
+                        <i v-show="vo2.active" class="layui-icon active">&#xe623;</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--右侧-->
+        <div class="right">
+
+            <a href="flink_add.html" class="layui-btn"><i class="layui-icon">&#xe654;</i>添加友情</a>
+            <table class="layui-table layui-form">
+                <colgroup>
+                    <col width="50">
+                    <col width="60">
+
+                    <col width="180">
+                    <col width="280">
+                    <col>
+                    <col width="120">
+                    <col width="150">
+                    <col width="80">
+                    <col width="180">
+                    <col width="100">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>排序</th>
+                    <th>网站名称</th>
+                    <th>连接</th>
+                    <th>描述</th>
+                    <th>联系人</th>
+                    <th>联系QQ</th>
+                    <th>显示</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="id35">
+                    <td>35</td>
+                    <td>5</td>
+                    <td>a5源码</td>
+                    <td><a href="http://down.admin5.com/" target="_blank">http://down.admin5.com/</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input data-id="35" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+                    <td>2020-01-01 00:00:00</td>
+                    <td><a href="/admin/flink/update/id/35.html">修改</a> | <a class="del" data-id=".id35"  href="/admin/flink/del/id/35.html">删除</a></td>
+                </tr>
+                <tr class="id48">
+                    <td>48</td>
+                    <td>17</td>
+                    <td>ThinkPHP</td>
+                    <td><a href="http://www.thinkphp.cn/" target="_blank">http://www.thinkphp.cn/</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input data-id="48" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+                    <td>2020-01-01 00:00:00</td>
+                    <td><a href="/admin/flink/update/id/48.html">修改</a> | <a class="del" data-id=".id48"  href="/admin/flink/del/id/48.html">删除</a></td>
+                </tr>
+                <tr class="id85">
+                    <td>85</td>
+                    <td>18</td>
+                    <td>vue.js</td>
+                    <td><a href="https://cn.vuejs.org/" target="_blank">https://cn.vuejs.org/</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input data-id="85" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+                    <td>2018-04-22 22:33:09</td>
+                    <td><a href="/admin/flink/update/id/85.html">修改</a> | <a class="del" data-id=".id85"  href="/admin/flink/del/id/85.html">删除</a></td>
+                </tr>
+                <tr class="id86">
+                    <td>86</td>
+                    <td>19</td>
+                    <td>layui</td>
+                    <td><a href="http://www.layui.com/" target="_blank">http://www.layui.com/</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input data-id="86" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+                    <td>2018-04-22 22:33:35</td>
+                    <td><a href="/admin/flink/update/id/86.html">修改</a> | <a class="del" data-id=".id86"  href="/admin/flink/del/id/86.html">删除</a></td>
+                </tr>
+                <tr class="id87">
+                    <td>87</td>
+                    <td>20</td>
+                    <td>Element</td>
+                    <td><a href="http://element-cn.eleme.io/" target="_blank">http://element-cn.eleme.io/</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input data-id="87" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+                    <td>2018-04-22 22:34:41</td>
+                    <td><a href="/admin/flink/update/id/87.html">修改</a> | <a class="del" data-id=".id87"  href="/admin/flink/del/id/87.html">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<script src="./static/admin/js/config.js"></script>
+<script src="./static/admin/js/script.js"></script>
+</body>
+</html>
