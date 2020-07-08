@@ -6,19 +6,20 @@
 
 - github : [https://github.com/aa24615/qadmin](https://github.com/aa24615/qadmin)
 - gitee : [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
+- 文档 : [http://docs.qadmin.net](http://docs.qadmin.net)
 
 ### 目录
 
 - qadmin-html
 - qadmin-iframe
 
-##### 混合版
+##### 普通版
 
 - 每个页面都需要引入左侧菜单与顶栏
 - 左侧菜单由vue渲染
 - 缺点: 跳转时能看到左侧有闪动的瞬间
 - [演示](http://demo.qadmin.net)
-- [文档](http://docs.qadmin.net)
+
 
 ##### iframe版
 
@@ -26,7 +27,6 @@
 - 左侧菜单由vue渲染
 - 优点: 传统,简单,上手更快
 - [演示](http://iframe.qadmin.net)
-- [文档](http://docs.qadmin.net)
 
 
 ### 联系我们
