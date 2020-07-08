@@ -1,8 +1,4 @@
 
-if(!/^http(s*):\/\//.test(location.href)){
-    alert('请先部署到 localhost 下再访问');
-    window.location.href = 'login.html';
-}
 
 
 layui.use('form', function () {
@@ -13,45 +9,15 @@ layui.use('form', function () {
 var vue = new Vue({
     el:'#app',
     data:{
-        webname:config.webname,
+        webname:config.webName,
         menu:[],
         address:[]
     },
     created:function(){
-
-        //加载左侧菜单
-        if(config.debug){
-            $.ajax({
-                url: config.menuUrl,
-                dataType: 'text',
-                success:  (menu) => {
-                    menu = eval('(' + menu + ')');
-                    sessionStorage.menu = JSON.stringify(menu);
-                    this.menu = menu;
-                    this.thisActive();
-                    this.thisAttr();
-                }
-            })
-        }else {
-            let data = sessionStorage.menu;
-            if (!data) {
-                $.ajax({
-                    url: config.menuUrl,
-                    dataType: 'text',
-                    success: (menu) => {
-                        menu = eval('(' + menu + ')');
-                        sessionStorage.menu = JSON.stringify(menu);
-                        this.menu = menu;
-                        this.thisActive();
-                        this.thisAttr();
-                    }
-                })
-            } else {
-                this.menu = JSON.parse(data);
-                this.thisActive();
-                this.thisAttr();
-            }
-        }
+        let data = sessionStorage.menu || JSON.stringify(config.menuList);
+        this.menu = JSON.parse(data);
+        this.thisActive();
+        this.thisAttr();
     },
     methods:{
         //记住收展

@@ -29,7 +29,8 @@
 ```html
 <link rel="stylesheet" href="./static/common/layui/css/layui.css">
 <link rel="stylesheet" href="./static/admin/css/style.css">
-<script src="./static/common/layui/layui.js"></script>
+    <link rel="stylesheet" href="./static/admin/css/style-iframe.css">
+    <script src="./static/common/layui/layui.js"></script>
 <script src="./static/common/jquery-3.3.1.min.js"></script>
 <script src="./static/common/vue.min.js"></script>
 ```

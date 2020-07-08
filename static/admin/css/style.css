@@ -20,6 +20,9 @@ table .layui-form-switch {
 
 
 
+html,body,#app,.main,.right{
+    height: 100%;
+}
 body {
     background-color: rgba(238, 238, 238, 0.2);
 }
@@ -132,6 +135,7 @@ header .breadcrumb li{
     height: 100%;
     background: #3c444d;
     overflow-x: auto;
+    z-index: 100;
 }
 
 .left ul li {
@@ -200,7 +204,22 @@ header .breadcrumb li{
 /*右侧*/
 .right {
     margin: 50px 0px 0px 150px;
-    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.right iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*left: 150px;*/
+    /*top: 50px;*/
+    padding-left: 150px;
+    padding-top: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     box-sizing: border-box;
 }
 
