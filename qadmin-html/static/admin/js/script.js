@@ -200,6 +200,7 @@ $(document).ready(function() {
     });
 })
 
+
 function delCache(){
     sessionStorage.clear();
     localStorage.clear();
