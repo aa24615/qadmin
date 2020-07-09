@@ -22,6 +22,9 @@
         this.v = '2.5.6'; //版本号
     }
 
+
+    
+
     win.Qadmin = new Qadmin();
 
 }(window);
