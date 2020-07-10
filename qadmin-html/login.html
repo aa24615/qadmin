@@ -8,7 +8,6 @@
     <title>管理员登陆 - QAdmin后台模板</title>
     <link rel="stylesheet" href="./static/common/layui/css/layui.css">
     <link rel="stylesheet" href="./static/admin/css/login.css">
-    </script>
 
 </head>
 
@@ -25,44 +24,48 @@
             <i class="layui-icon input-icon">&#xe673;</i>
         </div>
         <div class="layui-form-item">
-            <input type="checkbox" name="box" lay-skin="primary" title="记住密码" checked=""> <a class="back" href="javascript:;"  style="margin-top: 10px">忘记密码</a>
+            <input type="checkbox" name="box" lay-skin="primary" title="记住密码" checked="">
+            <a class="back" href="javascript:;"  style="margin-top: 10px">忘记密码</a>
         </div>
         <div class="layui-form-item">
             <button style="width: 100%" class="layui-btn" lay-submit lay-filter="login">立即登录</button>
 
         </div>
     </form>
+    <script src="./static/common/qadmin/qadmin.js"></script>
+
 
     <script>
 
 
+        Qadmin.ready(function () {
+            layui.use('form', function () {
+                var form = layui.form,
+                    layer = layui.layer,
+                    $ = layui.jquery;
 
-
-        layui.use('form', function () {
-            var form = layui.form,
-                layer = layui.layer,
-                $ = layui.jquery;
-
-
-            layer.tips('无需输入,请点击登录进入后台<br/>这个tips可随时去除!', '.layui-btn', {
-                tips: [3, '#333'],
-                time: 0
-            });
-
-            form.on('submit(login)', function (data) {
-                sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
-
-                layer.load({
-                    shade: 0.5,
-                    time: 0,
+                layer.tips('无需输入,请点击登录进入后台<br/>这个tips可随时去除!', '.layui-btn', {
+                    tips: [3, '#333'],
+                    time: 0
                 });
-                setTimeout(function () {
-                    window.location.href = 'index.html';
-                },1000)
 
-                return false;
+                form.on('submit(login)', function (data) {
+                    sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
+
+                    layer.load({
+                        shade: 0.5,
+                        time: 0,
+                    });
+                    setTimeout(function () {
+                        window.location.href = 'index.html';
+                    },1000)
+
+                    return false;
+                });
             });
-        });
+        })
+
+
     </script>
 </div>
 </body>

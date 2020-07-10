@@ -41,11 +41,13 @@
                     console.log(app());
                 });
             }
+            this.ready = function (a) {
+                a();
+            }
         }
         win.Qadmin = new Qadmin();
         win.Qadmin.init();
     }
-
 }(window);
 
 
