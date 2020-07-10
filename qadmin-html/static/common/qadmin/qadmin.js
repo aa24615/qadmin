@@ -23,21 +23,32 @@
 
     if(node.attachEvent && !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native code') < 0) && !isOpera){
         node.attachEvent('onreadystatechange', function(e){
-            console.log('加载网成...')
+            onScriptLoad();
         });
     } else {
         node.addEventListener('load', function(e){
-            console.log('加截中...')
+            onScriptLoad();
         }, false);
     }
 
-
-
-    var Qadmin = function(){
-        this.v = '1.3'; //版本号
+    function onScriptLoad(){
+        var Qadmin = function(){
+            this.v = '1.3'; //版本号
+            this.init = function () {
+                layui.config({
+                    base: './static/common/qadmin/module/'
+                }).use(["menu"],function (app) {
+                    console.log(app());
+                });
+            }
+        }
+        win.Qadmin = new Qadmin();
+        win.Qadmin.init();
     }
 
-
-    win.Qadmin = new Qadmin();
-
 }(window);
+
+
+
+
+
