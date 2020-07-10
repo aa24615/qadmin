@@ -8,21 +8,35 @@
  */
 
 
-
 ;!function(win){
     "use strict";
 
-    import msg from "module/msg.js";
 
-    var doc = document, config = {
-        modules: {} //记录模块物理路径
-        ,status: {} //记录模块加载状态
-        ,timeout: 10 //符合规范的模块请求最长等待秒数
-        ,event: {} //记录模块自定义事件
+    var head = document.getElementsByTagName('head')[0]
+    var node = document.createElement('script');
+
+    node.async = true;
+    node.charset = 'utf-8';
+    node.src = './static/common/layui/layui.js';
+
+    head.appendChild(node);
+
+    if(node.attachEvent && !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native code') < 0) && !isOpera){
+        node.attachEvent('onreadystatechange', function(e){
+            console.log('加载网成...')
+        });
+    } else {
+        node.addEventListener('load', function(e){
+            console.log('加截中...')
+        }, false);
     }
-        ,Qadmin = function(){
-        this.v = '2.5.6'; //版本号
+
+
+
+    var Qadmin = function(){
+        this.v = '1.3'; //版本号
     }
+
 
     win.Qadmin = new Qadmin();
 
