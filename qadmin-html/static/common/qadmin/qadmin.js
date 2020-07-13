@@ -17,15 +17,16 @@
 
     layui.config({
         base: './static/common/qadmin/module/' //你存放新模块的目录，注意，不是layui的模块目录
-    }).use(['menu','msg'],function (res) {
-        Qadmin.prototype.menu = res;
+    }).use(['menu','msgs'],function () {
 
-        console.log(res);
+        Qadmin.prototype.menu = layui.menu();
+        Qadmin.prototype.msgs = layui.msgs;
+        Qadmin.prototype.msg = layui.msg;
+        Qadmin.prototype.success = layui.success;
+        Qadmin.prototype.error = layui.error;
+
     });
 
-
-
-    layui.use(['form']);
 
     win.Qadmin = new Qadmin();
 
