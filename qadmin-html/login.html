@@ -28,7 +28,7 @@
             <a class="back" href="javascript:;"  style="margin-top: 10px">忘记密码</a>
         </div>
         <div class="layui-form-item">
-            <button style="width: 100%" class="layui-btn" lay-submit lay-filter="login">立即登录</button>
+            <button type="button" style="width: 100%" onclick="abc()" class="layui-btn" lay-submit lay-filter="login">立即登录</button>
         </div>
     </form>
 
@@ -39,34 +39,34 @@
     <script>
 
 
-       Qadmin.success('22');
-       setTimeout(function () {
-           Qadmin.success('22');
-       },500)
 
-        layui.use('form', function () {
-            var form = layui.form,
-                layer = layui.layer,
-                $ = layui.jquery;
+        Qadmin.ready(()=>{
+            Qadmin.jquery.post('22');
+        })
+        //
+        function abc() {
+            Qadmin.msg('33');
+        }
 
-            form.on('submit(login)', function (data) {
-                sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
-
-                layer.load({
-                    shade: 0.5,
-                    time: 0,
-                });
-                setTimeout(function () {
-                    window.location.href = 'index.html';
-                },1000)
-
-                return false;
-            });
-        });
-
-
-
-
+        // layui.use('form', function () {
+        //     var form = layui.form,
+        //         layer = layui.layer,
+        //         $ = layui.jquery;
+        //
+        //     form.on('submit(login)', function (data) {
+        //         sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
+        //
+        //         layer.load({
+        //             shade: 0.5,
+        //             time: 0,
+        //         });
+        //         setTimeout(function () {
+        //             window.location.href = 'index.html';
+        //         },1000)
+        //
+        //         return false;
+        //     });
+        // });
 
 
     </script>
