@@ -1,5 +1,20 @@
 
 
+layui.define('jquery', function(exports) {
+
+    var $ = layui.$;
+    var menuPath = './data/menu.json';
+
+    exports('init', function () {
+        return new Vue({
+            el: '#qadmin-header',
+            data: {
+                webname: "Qadmin",
+                address: []
+            }
+        })
+    })
+});
 
 layui.define('jquery', function(exports){
 

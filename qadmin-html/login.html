@@ -33,7 +33,6 @@
     </form>
 
 
-<!--    <script src="./static/common/vue/vue.min.js"></script>-->
     <script src="./static/common/layui/layui.js"></script>
     <script src="./static/common/qadmin/qadmin.js"></script>
     <script>
@@ -48,25 +47,25 @@
             Qadmin.msg('33');
         }
 
-        // layui.use('form', function () {
-        //     var form = layui.form,
-        //         layer = layui.layer,
-        //         $ = layui.jquery;
-        //
-        //     form.on('submit(login)', function (data) {
-        //         sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
-        //
-        //         layer.load({
-        //             shade: 0.5,
-        //             time: 0,
-        //         });
-        //         setTimeout(function () {
-        //             window.location.href = 'index.html';
-        //         },1000)
-        //
-        //         return false;
-        //     });
-        // });
+        layui.use('form', function () {
+            var form = layui.form,
+                layer = layui.layer,
+                $ = layui.jquery;
+
+            form.on('submit(login)', function (data) {
+                sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
+
+                layer.load({
+                    shade: 0.5,
+                    time: 0,
+                });
+                setTimeout(function () {
+                    window.location.href = 'index.html';
+                },1000)
+
+                return false;
+            });
+        });
 
 
     </script>
