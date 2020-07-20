@@ -101,6 +101,7 @@ header h1{
 header .breadcrumb{
     margin-left: 150px;
     padding-left: 20px;
+    padding-right: 20px;
 }
 header .breadcrumb i{
     float: left;
@@ -111,6 +112,10 @@ header .breadcrumb ul{
 header .breadcrumb li{
     float: left;
     margin: 0 3px;
+}
+
+header .breadcrumb .userinfo{
+    float: right;
 }
 
 

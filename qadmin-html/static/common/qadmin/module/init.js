@@ -6,6 +6,9 @@ layui.define('jquery', function(exports) {
     var menuPath = './data/menu.json';
 
     exports('init', function () {
+
+        
+
         return new Vue({
             el: '#qadmin-header',
             data: {
@@ -86,7 +89,9 @@ layui.define('jquery', function(exports){
 
                         data = this.menu[pid].list[id];
                     }
+
                     this.updateStorage();
+
                     if(data.url.length>0){
                         if(data.target){
                             if(data.target=='_blank'){
@@ -98,8 +103,9 @@ layui.define('jquery', function(exports){
                         }else{
                             window.location.href = data.url;
                         }
-
                     }
+
+
                 },
 
                 //更新菜单缓存
@@ -109,31 +115,26 @@ layui.define('jquery', function(exports){
                 //菜单高亮
                 thisActive:function(){
 
-                    let pathname = window.location.pathname.split('/')[-1];
-                    let host = window.location.host;
+                    let href = window.location.href;
+
                     let pid = false;
                     let id = false;
                     this.menu.forEach((v,k)=>{
                         let url = v.url;
                         if(url.length>0){
-                            if(url[0]!='/' && url.substr(0,4)!='http'){
-                                url = '/'+url;
+                            if(href.indexOf(url)>=0){
+                                pid = k;
                             }
                         }
-                        if(pathname==url){
-                            pid = k;
-                        }
+
                         v.list.forEach((v2,k2)=>{
                             let url = v2.url;
 
                             if(url.length>0){
-                                if(url[0]!='/' && url.substr(0,4)!='http'){
-                                    url = '/'+url;
+                                if(href.indexOf(url)>=0){
+                                    id = k2;
+                                    pid = k;
                                 }
-                            }
-                            if(pathname==url){
-                                pid = k;
-                                id = k2;
                             }
                         })
                     })
