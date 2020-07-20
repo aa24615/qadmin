@@ -16,7 +16,8 @@ layui.define('jquery', function(exports) {
     })
 });
 
-layui.define('jquery', function(exports){
+layui.define(['jquery','init'], function(exports){
+
 
     var $ = layui.$;
     var menuPath = './data/menu.json';
@@ -30,6 +31,8 @@ layui.define('jquery', function(exports){
                 address:[]
             },
             created:function(){
+
+                console.log(layui.init.webname);
 
                 //加载左侧菜单
                 let data = sessionStorage.menu;

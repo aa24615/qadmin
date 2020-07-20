@@ -48,6 +48,7 @@
         layui.use('layer',function () {
 
             Qadmin.prototype.menu = layui.menu();
+            Qadmin.prototype.init = layui.init();
             Qadmin.prototype.msgs = layui.msgs;
             Qadmin.prototype.msg = layui.msg;
             Qadmin.prototype.success = layui.success;
