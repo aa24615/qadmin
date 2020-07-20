@@ -28,7 +28,6 @@
         base: './static/common/qadmin/module/' //你存放新模块的目录，注意，不是layui的模块目录
     }).use(['init','msgs'],function () {
         Qadmin.prototype.menu = layui.menu();
-        Qadmin.prototype.init = layui.init();
         Qadmin.prototype.msgs = layui.msgs;
         Qadmin.prototype.msg = layui.msg;
         Qadmin.prototype.success = layui.success;
@@ -48,7 +47,6 @@
         layui.use('layer',function () {
 
             Qadmin.prototype.menu = layui.menu();
-            Qadmin.prototype.init = layui.init();
             Qadmin.prototype.msgs = layui.msgs;
             Qadmin.prototype.msg = layui.msg;
             Qadmin.prototype.success = layui.success;

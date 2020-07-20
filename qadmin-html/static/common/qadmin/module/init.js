@@ -16,23 +16,21 @@ layui.define('jquery', function(exports) {
     })
 });
 
-layui.define(['jquery','init'], function(exports){
-
+layui.define('jquery', function(exports){
 
     var $ = layui.$;
     var menuPath = './data/menu.json';
+
+    const init = layui.init();
 
     exports('menu', function () {
 
         return new Vue({
             el:'#menu',
             data:{
-                menu:[],
-                address:[]
+                menu:[]
             },
             created:function(){
-
-                console.log(layui.init.webname);
 
                 //加载左侧菜单
                 let data = sessionStorage.menu;
@@ -110,7 +108,8 @@ layui.define(['jquery','init'], function(exports){
                 },
                 //菜单高亮
                 thisActive:function(){
-                    let pathname = window.location.pathname;
+
+                    let pathname = window.location.pathname.split('/')[-1];
                     let host = window.location.host;
                     let pid = false;
                     let id = false;
@@ -169,7 +168,8 @@ layui.define(['jquery','init'], function(exports){
                                     name:v2.name,
                                     url:v2.url,
                                 })
-                                this.address = address;
+                                console.log(address);
+                                init.address = address;
                             }
                         })
                     })
