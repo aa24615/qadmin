@@ -6,9 +6,6 @@ layui.define('jquery', function(exports) {
     var menuPath = './data/menu.json';
 
     exports('init', function () {
-
-        
-
         return new Vue({
             el: '#qadmin-header',
             data: {
@@ -71,9 +68,7 @@ layui.define('jquery', function(exports){
                                     v2.active = false;
                                 })
                             })
-
                             data.active = true;
-
                         }
 
                         data.hidden = !data.hidden;
