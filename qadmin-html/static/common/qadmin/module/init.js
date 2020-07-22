@@ -1,15 +1,16 @@
 
 
 layui.define([], function(exports) {
-    exports('init', function () {
+    exports('init', (function () {
+        console.log('初始化')
         return new Vue({
             el: '#qadmin-header',
             data: {
-                webname: layui.qadmin_config.webname || "Qadmin",
+                webname: "Qadmin",
                 address: []
             }
         })
-    })
+    })())
 });
 
 layui.define(['jquery','data'], function(exports){
@@ -17,10 +18,11 @@ layui.define(['jquery','data'], function(exports){
     var $ = layui.$;
     var menuPath = './data/menu.json';
 
-    const init = layui.init();
+    const init = layui.init;
 
-    exports('menu', function () {
+    exports('menu', (function () {
 
+        console.log('左侧菜单');
         return new Vue({
             el:'#qadmin-menu',
             data:{
@@ -30,18 +32,21 @@ layui.define(['jquery','data'], function(exports){
 
                 //加载左侧菜单
                 let menu = layui.data.get('menu');
-                if (!menu) {
-                    $.ajax({
-                        url: menuPath,
-                        dataType: 'text',
-                        success: (menu) => {
-                            menu = eval('(' + menu + ')');
-                            layui.data.set('menu',menu);
-                            this.menu = menu;
-                            this.thisActive();
-                            this.thisAttr();
-                        }
+                if (typeof menu == 'string') {
+                    setTimeout(()=>{
+                        $.ajax({
+                            url: menuPath,
+                            dataType: 'text',
+                            success: (menu) => {
+                                menu = eval('(' + menu + ')');
+                                layui.data.set('menu',menu);
+                                this.menu = menu;
+                                this.thisActive();
+                                this.thisAttr();
+                            }
+                        },3000)
                     })
+
                 } else {
                     this.menu = menu;
                     this.thisActive();
@@ -167,5 +172,5 @@ layui.define(['jquery','data'], function(exports){
             }
         })
 
-    });
+    })());
 })
