@@ -7,14 +7,18 @@
  @License：MIT
  */
 
+config = {
+    webname:"Qadmin2"
+}
 
 ;!function(win){
     "use strict";
 
+
     var Qadmin = function(){
         this.v = '1.3'; //版本号
+        this.config = config;
     }
-
 
 
     layui.config({
@@ -27,6 +31,7 @@
     layui.config({
         base: './static/common/qadmin/module/' //你存放新模块的目录，注意，不是layui的模块目录
     }).use(['init','msgs','errors','data'],function () {
+        layui.qadmin_config = config;
         Qadmin.prototype.errors = layui.errors;
         Qadmin.prototype.menu = layui.menu();
         Qadmin.prototype.msgs = layui.msgs;

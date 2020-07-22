@@ -1,22 +1,18 @@
 
 
-layui.define('jquery', function(exports) {
-
-    var $ = layui.$;
-    var menuPath = './data/menu.json';
-
+layui.define([], function(exports) {
     exports('init', function () {
         return new Vue({
             el: '#qadmin-header',
             data: {
-                webname: "Qadmin",
+                webname: layui.qadmin_config.webname || "Qadmin",
                 address: []
             }
         })
     })
 });
 
-layui.define('jquery', function(exports){
+layui.define(['jquery','data'], function(exports){
 
     var $ = layui.$;
     var menuPath = './data/menu.json';
@@ -26,28 +22,28 @@ layui.define('jquery', function(exports){
     exports('menu', function () {
 
         return new Vue({
-            el:'#menu',
+            el:'#qadmin-menu',
             data:{
                 menu:[]
             },
             created:function(){
 
                 //加载左侧菜单
-                let data = sessionStorage.menu;
-                if (!data) {
+                let menu = layui.data.get('menu');
+                if (!menu) {
                     $.ajax({
                         url: menuPath,
                         dataType: 'text',
                         success: (menu) => {
                             menu = eval('(' + menu + ')');
-                            sessionStorage.menu = JSON.stringify(menu);
+                            layui.data.set('menu',menu);
                             this.menu = menu;
                             this.thisActive();
                             this.thisAttr();
                         }
                     })
                 } else {
-                    this.menu = JSON.parse(data);
+                    this.menu = menu;
                     this.thisActive();
                     this.thisAttr();
                 }
@@ -101,11 +97,6 @@ layui.define('jquery', function(exports){
                     }
 
 
-                },
-
-                //更新菜单缓存
-                updateStorage(){
-                    sessionStorage.menu = JSON.stringify(this.menu);
                 },
                 //菜单高亮
                 thisActive:function(){
@@ -164,11 +155,14 @@ layui.define('jquery', function(exports){
                                     name:v2.name,
                                     url:v2.url,
                                 })
-                                console.log(address);
                                 init.address = address;
                             }
                         })
                     })
+                },
+                //更新菜单缓存
+                updateStorage(){
+                    layui.data.set('menu',this.menu);
                 }
             }
         })
