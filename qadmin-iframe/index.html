@@ -8,6 +8,9 @@
     <title>后台首页 - QAdmin后台模板</title>
     <link rel="stylesheet" href="./static/common/layui/css/layui.css">
     <link rel="stylesheet" href="./static/admin/css/style.css">
+    <script src="./static/common/layui/layui.js"></script>
+    <script src="./static/common/jquery-3.3.1.min.js"></script>
+    <script src="./static/common/vue.min.js"></script>
     <style>
         .right h2{
             margin: 10px 0;
@@ -19,9 +22,9 @@
 </head>
 <body>
 
-<div >
+<div id="app">
     <!--顶栏-->
-    <header id="qadmin-header">
+    <header>
         <h1 v-text="webname"></h1>
         <div class="breadcrumb">
             <i class="layui-icon">&#xe715;</i>
@@ -35,7 +38,7 @@
 
     <div class="main">
         <!--左栏-->
-        <div class="left" id="qadmin-menu">
+        <div class="left">
             <ul class="cl" >
                 <!--顶级分类-->
                 <li v-for="vo,index in menu" :class="{hidden:vo.hidden}">
