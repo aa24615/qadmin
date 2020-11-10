@@ -8,6 +8,7 @@
     <title>管理员登陆 - QAdmin后台模板</title>
     <link rel="stylesheet" href="./static/common/layui/css/layui.css">
     <link rel="stylesheet" href="./static/admin/css/login.css">
+    <script src="./static/common/layui/layui.js"></script>
 </head>
 
 <body id="login">
@@ -40,14 +41,7 @@
                 $ = layui.jquery;
 
 
-            layer.tips('无需输入,请点击登录进入后台<br/>这个tips可随时去除!', '.layui-btn', {
-                tips: [3, '#333'],
-                time: 0
-            });
-
             form.on('submit(login)', function (data) {
-                sessionStorage.isLgoin = 1; //模拟登录状态,实际使用时请删除掉
-
                 layer.load({
                     shade: 0.5,
                     time: 0,
