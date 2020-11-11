@@ -17,16 +17,13 @@ table .layui-form-switch {
 }
 
 /*公共样式*/
-
-
-
 html,body,#app,.main,.right{
     height: 100%;
 }
+
 body {
     background-color: rgba(238, 238, 238, 0.2);
 }
-
 
 a {
     color: #1aa094;
@@ -35,7 +32,6 @@ a {
 a:hover {
     color: #333;
 }
-
 
 .cl {
     zoom: 1
@@ -62,8 +58,6 @@ foo, .foo {
 }
 
 /*滚动条*/
-
-
 
 ::-webkit-scrollbar-corner{
     background: #1aa094;

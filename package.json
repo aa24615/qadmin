@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/aa24615/qadmin/issues"
   },
-  "homepage": "https://github.com/aa24615/qadmin#readme"
+  "homepage": "https://github.com/aa24615/qadmin#readme",
+  "dependencies": {
+    "fs-extra": "^9.0.1"
+  }
 }

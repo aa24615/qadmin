@@ -1,6 +1,4 @@
 
-
-
 layui.use('form', function () {
     var form = layui.form,
         layer = layui.layer;
@@ -9,13 +7,12 @@ layui.use('form', function () {
 var vue = new Vue({
     el:'#app',
     data:{
-        webname:config.webName,
+        webname:config.name,
         menu:[],
         address:[]
     },
     created:function(){
-        let data = sessionStorage.menu || JSON.stringify(config.menuList);
-        this.menu = JSON.parse(data);
+        this.menu = config.menu;
         this.thisActive();
         this.thisAttr();
     },
@@ -24,9 +21,7 @@ var vue = new Vue({
         onActive:function (pid,id=false) {
             let data;
             if(id===false){
-
                 data = this.menu[pid];
-
                 if(data.url.length>0){
                     this.menu.forEach((v,k)=>{
                         v.active = false;
@@ -34,22 +29,19 @@ var vue = new Vue({
                             v2.active = false;
                         })
                     })
-
                     data.active = true;
-
                 }
                 data.hidden = !data.hidden;
             }else{
-
                 this.menu.forEach((v,k)=>{
                     v.active = false;
                     v.list.forEach((v2,k2)=>{
                         v2.active = false;
                     })
                 })
-
                 data = this.menu[pid].list[id];
             }
+
             this.updateStorage();
             if(data.url.length>0){
                 if(data.target){
@@ -58,11 +50,9 @@ var vue = new Vue({
                     }else{
                         window.location.href = data.url;
                     }
-
                 }else{
                     window.location.href = data.url;
                 }
-
             }
         },
 
@@ -147,7 +137,7 @@ $(document).ready(function() {
         var id = $(this).attr("data-id");
 
         layer.confirm('你确定要删除么?', {
-            btn: ['确定', '取消'] //按钮
+            btn: ['确定', '取消']
         }, function () {
             $.get(url, function (data) {
                 if (data.code == 1) {
