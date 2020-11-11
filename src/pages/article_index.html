@@ -1,0 +1,380 @@
+<title>文章管理 - QAdmin后台模板</title>
+
+<body>
+
+
+<a href="article_add.html" class="layui-btn"><i class="layui-icon">&#xe654;</i>添加文章</a>
+
+<table class="layui-table layui-form">
+    <colgroup>
+        <col width="80">
+        <col width="100">
+        <col width="100">
+        <col>
+        <col width="90">
+        <col width="90">
+        <col width="90">
+        <col width="90">
+        <col width="90">
+        <col width="200">
+        <col width="150">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>缩略图</th>
+        <th>分类</th>
+        <th>标题</th>
+        <th>浏览</th>
+        <th>显示</th>
+        <th>置顶</th>
+        <th>实验室</th>
+        <th>作品</th>
+        <th>时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="id84">
+        <td>84</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>25</td>
+        <td>微信小程序ajax封装API请求封装</td>
+        <td>61</td>
+        <td><input data-id="84" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="84" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="84" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="84" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-11-20 08:49:39</td>
+        <td><a href="/admin/article/update/id/84.html">修改</a> | <a class="del" data-id=".id84"
+                                                                   href="/admin/article/del/id/84.html">删除</a></td>
+    </tr>
+    <tr class="id83">
+        <td>83</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>18</td>
+        <td>利用python操作psd导出缩略图</td>
+        <td>65</td>
+        <td><input data-id="83" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="83" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="83" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="83" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-10-10 22:51:33</td>
+        <td><a href="/admin/article/update/id/83.html">修改</a> | <a class="del" data-id=".id83"
+                                                                   href="/admin/article/del/id/83.html">删除</a></td>
+    </tr>
+    <tr class="id82">
+        <td>82</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>使用Imagick来导出psd图层图片</td>
+        <td>78</td>
+        <td><input data-id="82" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="82" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="82" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="82" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-10-10 22:21:22</td>
+        <td><a href="/admin/article/update/id/82.html">修改</a> | <a class="del" data-id=".id82"
+                                                                   href="/admin/article/del/id/82.html">删除</a></td>
+    </tr>
+    <tr class="id81">
+        <td>81</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>14</td>
+        <td>node.js分布式文件缓存COS版</td>
+        <td>94</td>
+        <td><input data-id="81" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="81" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="81" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="81" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-05-15 23:05:50</td>
+        <td><a href="/admin/article/update/id/81.html">修改</a> | <a class="del" data-id=".id81"
+                                                                   href="/admin/article/del/id/81.html">删除</a></td>
+    </tr>
+    <tr class="id80">
+        <td>80</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>24</td>
+        <td>GIT 一键 push 脚本</td>
+        <td>132</td>
+        <td><input data-id="80" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="80" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="80" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="80" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 11:43:47</td>
+        <td><a href="/admin/article/update/id/80.html">修改</a> | <a class="del" data-id=".id80"
+                                                                   href="/admin/article/del/id/80.html">删除</a></td>
+    </tr>
+    <tr class="id79">
+        <td>79</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>让新手程序猿也会ThinkPHP for QQ登陆</td>
+        <td>150</td>
+        <td><input data-id="79" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="79" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="79" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="79" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 10:33:26</td>
+        <td><a href="/admin/article/update/id/79.html">修改</a> | <a class="del" data-id=".id79"
+                                                                   href="/admin/article/del/id/79.html">删除</a></td>
+    </tr>
+    <tr class="id78">
+        <td>78</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>一句话让U方法生成绝对URL</td>
+        <td>75</td>
+        <td><input data-id="78" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="78" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="78" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="78" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 10:21:42</td>
+        <td><a href="/admin/article/update/id/78.html">修改</a> | <a class="del" data-id=".id78"
+                                                                   href="/admin/article/del/id/78.html">删除</a></td>
+    </tr>
+    <tr class="id77">
+        <td>77</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>php拼手气红包函数</td>
+        <td>82</td>
+        <td><input data-id="77" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="77" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="77" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="77" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 01:07:37</td>
+        <td><a href="/admin/article/update/id/77.html">修改</a> | <a class="del" data-id=".id77"
+                                                                   href="/admin/article/del/id/77.html">删除</a></td>
+    </tr>
+    <tr class="id76">
+        <td>76</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>php一句代码让http跳转https</td>
+        <td>78</td>
+        <td><input data-id="76" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="76" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="76" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="76" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 00:59:17</td>
+        <td><a href="/admin/article/update/id/76.html">修改</a> | <a class="del" data-id=".id76"
+                                                                   href="/admin/article/del/id/76.html">删除</a></td>
+    </tr>
+    <tr class="id75">
+        <td>75</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>20</td>
+        <td>10行JQ搞定短信验证码发送</td>
+        <td>78</td>
+        <td><input data-id="75" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="75" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="75" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="75" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 00:54:36</td>
+        <td><a href="/admin/article/update/id/75.html">修改</a> | <a class="del" data-id=".id75"
+                                                                   href="/admin/article/del/id/75.html">删除</a></td>
+    </tr>
+    <tr class="id74">
+        <td>74</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>最新阿里云短信验证码整合代码</td>
+        <td>44</td>
+        <td><input data-id="74" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="74" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="74" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="74" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 00:47:38</td>
+        <td><a href="/admin/article/update/id/74.html">修改</a> | <a class="del" data-id=".id74"
+                                                                   href="/admin/article/del/id/74.html">删除</a></td>
+    </tr>
+    <tr class="id73">
+        <td>73</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>暂无内容</td>
+        <td>134</td>
+        <td><input data-id="73" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="73" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="73" lay-filter="experiment" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="73" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 00:42:30</td>
+        <td><a href="/admin/article/update/id/73.html">修改</a> | <a class="del" data-id=".id73"
+                                                                   href="/admin/article/del/id/73.html">删除</a></td>
+    </tr>
+    <tr class="id72">
+        <td>72</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>thinkphp自定义状态函数 解决一切状态信息</td>
+        <td>83</td>
+        <td><input data-id="72" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="72" lay-filter="top" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="72" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="72" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-23 00:38:03</td>
+        <td><a href="/admin/article/update/id/72.html">修改</a> | <a class="del" data-id=".id72"
+                                                                   href="/admin/article/del/id/72.html">删除</a></td>
+    </tr>
+    <tr class="id71">
+        <td>71</td>
+        <td><img src="./static/admin/img/pic.png" height="50px"/></td>
+        <td>17</td>
+        <td>IYCMS博客管理系统(测试版) 仅供学习</td>
+        <td>2256</td>
+        <td><input data-id="71" lay-filter="state" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="71" lay-filter="top" type="checkbox" checked lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="71" lay-filter="experiment" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+        <td><input data-id="71" lay-filter="works" type="checkbox" lay-text="开启|关闭" lay-skin="switch"></td>
+
+        <td>2018-04-22 23:59:50</td>
+        <td><a href="/admin/article/update/id/71.html">修改</a> | <a class="del" data-id=".id71"
+                                                                   href="/admin/article/del/id/71.html">删除</a></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="page">
+    <ul class="pagination">
+        <li class="disabled"><span>&laquo;</span></li>
+        <li class="active"><span>1</span></li>
+        <li><a href="/admin/user/index.html?page=2">2</a></li>
+        <li><a href="/admin/user/index.html?page=3">3</a></li>
+        <li><a href="/admin/user/index.html?page=4">4</a></li>
+        <li><a href="/admin/user/index.html?page=5">5</a></li>
+        <li><a href="/admin/user/index.html?page=6">6</a></li>
+        <li><a href="/admin/user/index.html?page=7">7</a></li>
+        <li><a href="/admin/user/index.html?page=8">8</a></li>
+        <li class="disabled"><span>...</span></li>
+        <li><a href="/admin/user/index.html?page=109">109</a></li>
+        <li><a href="/admin/user/index.html?page=110">110</a></li>
+        <li><a href="/admin/user/index.html?page=2">&raquo;</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script>
+    layui.use('form', function () {
+        var form = layui.form, layer = layui.layer, $ = layui.jquery;
+
+        form.on('switch(state)', function (data) {
+            var id = $(data.elem).attr("data-id");
+            $.ajax({
+                url: "/admin/article/state.html",
+                data: {
+                    id: id,
+                },
+                type: "get",
+                dataType: "json",
+                success: function (e) {
+                    if (e.code == 1) {
+                        layer.msg(e.msg, {
+                            icon: 1
+                        });
+                    } else {
+                        layer.msg(e.msg, {
+                            icon: 2,
+                            shade: 0.5,
+                            time: 2000,
+                            shadeClose: true
+                        });
+                    }
+                }
+            });
+        });
+
+        form.on('switch(top)', function (data) {
+            var id = $(data.elem).attr("data-id");
+            $.ajax({
+                url: "/admin/article/top.html",
+                data: {
+                    id: id,
+                },
+                type: "get",
+                dataType: "json",
+                success: function (e) {
+                    if (e.code == 1) {
+                        layer.msg(e.msg, {
+                            icon: 1
+                        });
+                    } else {
+                        layer.msg(e.msg, {
+                            icon: 2,
+                            shade: 0.5,
+                            time: 2000,
+                            shadeClose: true
+                        });
+                    }
+                }
+            });
+        });
+
+        form.on('switch(experiment)', function (data) {
+            var id = $(data.elem).attr("data-id");
+            $.ajax({
+                url: "/admin/article/experiment.html",
+                data: {
+                    id: id,
+                },
+                type: "get",
+                dataType: "json",
+                success: function (e) {
+                    if (e.code == 1) {
+                        layer.msg(e.msg, {
+                            icon: 1
+                        });
+                    } else {
+                        layer.msg(e.msg, {
+                            icon: 2,
+                            shade: 0.5,
+                            time: 2000,
+                            shadeClose: true
+                        });
+                    }
+                }
+            });
+        });
+
+        form.on('switch(works)', function (data) {
+            var id = $(data.elem).attr("data-id");
+            $.ajax({
+                url: "/admin/article/works.html",
+                data: {
+                    id: id,
+                },
+                type: "get",
+                dataType: "json",
+                success: function (e) {
+                    if (e.code == 1) {
+                        layer.msg(e.msg, {
+                            icon: 1
+                        });
+                    } else {
+                        layer.msg(e.msg, {
+                            icon: 2,
+                            shade: 0.5,
+                            time: 2000,
+                            shadeClose: true
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>

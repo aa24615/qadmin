@@ -7,13 +7,18 @@
 - github: [https://github.com/aa24615/qadmin](https://github.com/aa24615/qadmin)
 - gitee: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
 - 开发文档: [http://docs.qadmin.net](http://docs.qadmin.net)
+- npm: `npm i qadmin-qadmin`
+### 目录结构
 
-### 目录
 
-- qadmin-html  普通版
-- qadmin-iframe  iframe版
+~~~
+/dist                 构建后的源代码
+/dist/qadmin-html     普通版
+/dist/qadmin-iframe   iframe版
+/src                  构建脚本(不必理会)
+~~~
 
-##### 普通版
+### 普通版
 
 - 每个页面都需要引入左侧菜单与顶栏
 - 左侧菜单由vue渲染
@@ -21,7 +26,7 @@
 - 演示: [http://demo.qadmin.net](http://demo.qadmin.net)
 
 
-##### iframe版
+### iframe版
 
 - 只需要一个页面引入左侧菜单与顶栏
 - 左侧菜单由vue渲染,主体内容以iframe标签方式展示
@@ -36,5 +41,4 @@
 - 博客: [http://blog.php127.com](http://blog.php127.com)
 
 - 更多开源项目: [https://github.com/aa24615](https://github.com/aa24615)
-
 

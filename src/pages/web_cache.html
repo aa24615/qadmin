@@ -1,0 +1,32 @@
+<title>后台首页 - QAdmin后台模板</title>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+    layui.use('layer', function () {
+        layer.msg('<h2>清除成功</h2> <p id="">页面自动  <a id="href" href="index.html">跳转</a> 等待时间： <b id="wait">3</b></p> ', {
+            icon: 1,
+            shade: 0.5
+        });
+    })
+
+    !(function run(wait) {
+        if (wait <= 0) {
+            location.href = "index.html";
+        } else {
+            wait--;
+            setTimeout(function () {
+                document.getElementById("wait").innerHTML = wait;
+                run(wait);
+            }, 1000);
+        }
+    })(3);
+</script>
+
+<script type="text/javascript">
+    delCache();
+</script>
+

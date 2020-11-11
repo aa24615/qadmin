@@ -1,0 +1,38 @@
+<title>提示框 - QAdmin后台模板</title>
+
+<body>
+
+<a onclick="msg(1,'修改成功')" target="_blank" class="layui-btn">成功提示</a>
+<a onclick="msg(2,'修改失改')" target="_blank" class="layui-btn layui-btn-danger">失败提示</a>
+<a onclick="msg(1,'修改成功','pages_msg.html')" target="_blank" class="layui-btn layui-btn-normal">成功并跳转</a>
+
+
+<pre class="layui-code">
+msg(code,msg,url,jumptime);
+msg(1,'成功');
+msg(0,'失败');
+msg(1,'成功','user.html',1);
+msg({
+    code:1,
+    msg:'成功',
+    url:'user.html',
+    s:3
+})
+            </pre>
+
+<p> code 状态码 [ 1 成功 0失败 ] </p>
+<p> msg 说明 </p>
+<p> url 跳转的地址 不传则不跳转 </p>
+<p> s 等待?秒后跳转 </p>
+
+<p>
+<blockquote class="layui-elem-quote"> 你可以在config.js中配置显示位置与遮罩</blockquote>
+
+</p>
+
+</body>
+
+
+<script type="text/javascript">
+    delCache();
+</script>
