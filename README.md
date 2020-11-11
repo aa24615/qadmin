@@ -8,7 +8,7 @@
 - gitee: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
 - 开发文档: [http://docs.qadmin.net](http://docs.qadmin.net)
 
-### 目录
+### 目录结构
 
 - qadmin-html  普通版
 - qadmin-iframe  iframe版

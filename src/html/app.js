@@ -6,20 +6,16 @@ const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 
 
-
-
 const start = function () {
 
-    let pathName = 'qadmin-iframe';
+    let pathName = 'qadmin-html';
 
     tools.copyFolder('src/pages','dist/'+pathName);
-
-
-    fse.copySync('src/iframe/index.html','dist/'+pathName+'/index.html');
-
+    fse.copySync('src/html/index.html','dist/'+pathName+'/index.html');
     tools.copyFolder('src/static','dist/'+pathName+'/static');
 
     let dir = path.join(process.cwd(),'dist/'+pathName+'/')
+
     let files = fs.readdirSync(dir);
 
     files.forEach(function (item, index) {

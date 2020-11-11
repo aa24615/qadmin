@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/aa24615/qadmin#readme",
   "dependencies": {
-    "fs-extra": "^9.0.1"
+    "fs-extra": "^9.0.1",
+    "jsdom": "^16.4.0"
   }
 }
