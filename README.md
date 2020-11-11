@@ -7,7 +7,7 @@
 - github: [https://github.com/aa24615/qadmin](https://github.com/aa24615/qadmin)
 - gitee: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
 - 开发文档: [http://docs.qadmin.net](http://docs.qadmin.net)
-
+- npm: `npm i qadmin-qadmin`
 ### 目录结构
 
 
