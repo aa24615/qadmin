@@ -2,9 +2,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const fse = require('fs-extra');
+const iframe = require('./src/iframe-src/app.js');
 
 
-const fse = require('fs-extra')
+
 
 
 const argv = process.argv;
@@ -20,21 +22,32 @@ var version = date.getFullYear()+''+
     date.getMinutes()+''+
     date.getSeconds();//新版本号
 
+fse.removeSync('dist');
+
+fse.mkdirpSync('dist');
+
+
+let iframePath =  'iframe_test';
+let htmlPath =  'html_test';
 
 
 
-let iframe_path = path.join(__dirname,'iframe_test');
-let src_path = path.join(__dirname,'iframe_test');
+copyFolder('src/html','dist/'+iframePath);
+fse.copySync('src/iframe-src/index.html','dist/'+iframePath+'/index.html');
+copyFolder('src/static','dist/'+iframePath+'/static');
 
 
-copyFolder(src_path,iframe_path);
+copyFolder('src/html','dist/'+htmlPath);
+copyFolder('src/static','dist/'+htmlPath+'/static');
 
-//
+
+iframe.start(iframePath);
+
+
+
 // getDir('./'+argv[2]);
 
 console.log('全部完毕',"新版本号:"+version);
-
-console.log("输出目录:",path.join(__dirname,iframe_path))
 
 
 async function example(f,body) {
@@ -46,8 +59,6 @@ async function example(f,body) {
 }
 
 function copyFolder(copiedPath, resultPath) {
-
-
 
     resultPath = path.join(__dirname, resultPath)
     copiedPath = path.join(__dirname, copiedPath)
