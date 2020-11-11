@@ -28,12 +28,10 @@ const start = function () {
             if(ext=='html'){
                 console.log(fPath);
 
-                // let body = fs.readFileSync(fPath,'utf8');
-                // body = body.replace(/\{\{version\}\}/g,version);
-                //
-                // example(fPath,body);
-                //
-                // console.log("替换完成",fPath);
+                let body = fs.readFileSync(fPath,'utf8');
+                body = body.replace(/\{\{version\}\}/g,tools.newVersion());
+                tools.writeFile(fPath,body);
+                console.log("替换完成",fPath);
             }
         }
     });
