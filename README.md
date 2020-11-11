@@ -10,8 +10,13 @@
 
 ### 目录结构
 
-- qadmin-html  普通版
-- qadmin-iframe  iframe版
+
+~~~
+/dist                 构建后的源代码
+/dist/qadmin-html     普通版
+/dist/qadmin-iframe   iframe版
+/src                  构建脚本(不必理会)
+~~~
 
 ##### 普通版
 
@@ -36,5 +41,4 @@
 - 博客: [http://blog.php127.com](http://blog.php127.com)
 
 - 更多开源项目: [https://github.com/aa24615](https://github.com/aa24615)
-
 
