@@ -1,6 +1,6 @@
 # QAdmin轻量级后台模板
 
-基于layui框架与Vue.js构建
+基于[layui框架](https://www.layui.com/)与[Vue.js](https://cn.vuejs.org/)构建
 
 轻量不复杂 简洁不简单
 
