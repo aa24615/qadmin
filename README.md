@@ -73,3 +73,8 @@
 
 
 
+### License
+
+qadmin is licensed under the license of MIT. See the [LICENSE](LICENSE) for more details.
+
+
