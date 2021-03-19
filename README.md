@@ -63,14 +63,24 @@
 - 演示: [http://iframe.qadmin.net](http://iframe.qadmin.net)
 
 
+### 在架构中使用
+
+thinkphp6示例
+
+[https://github.com/aa24615/qadmin-thinkphp6](https://github.com/aa24615/qadmin-thinkphp6)
+
+
+
+### 参与贡献
+
+1. fork 当前库到你的名下
+2. 在你的本地修改完成审阅过后提交到你的仓库
+3. 提交 PR 并描述你的修改，等待合并
+
+
 ### 联系我们
 
 - QQ群: [943685402](https://qm.qq.com/cgi-bin/qm/qr?k=Fg-zh0M3VrrxNfMs9RxsEyfGa6OqCGCF&jump_from=webapi)
-
-- 博客: [http://blog.php127.com](http://blog.php127.com)
-
-- 更多开源项目: [https://github.com/aa24615](https://github.com/aa24615)
-
 
 
 ### License
