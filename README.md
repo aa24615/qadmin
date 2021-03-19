@@ -10,7 +10,7 @@
 ```
 ### git仓库
 - github: [https://github.com/aa24615/qadmin](https://github.com/aa24615/qadmin)
-- gitee: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
+- gitosc: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
 
 ### zip下载
 - 官方下载: [http://www.qadmin.net/](http://www.qadmin.net/)
@@ -66,8 +66,8 @@
 ### 在架构中使用
 
 thinkphp6示例
-
-[https://github.com/aa24615/qadmin-thinkphp6](https://github.com/aa24615/qadmin-thinkphp6)
+- github: [https://github.com/aa24615/qadmin-thinkphp6](https://github.com/aa24615/qadmin-thinkphp6)
+- gitosc: [https://gitee.com/flash127/qadmin-thinkphp6](https://gitee.com/flash127/qadmin-thinkphp6)
 
 
 
