@@ -84,6 +84,13 @@
     github: [https://github.com/aa24615/qadmin-spring-web-mvc](https://github.com/aa24615/qadmin-spring-web-mvc)    
     gitosc: [https://gitee.com/flash127/qadmin-spring-web-mvc](https://gitee.com/flash127/qadmin-spring-web-mvc) 
 
+> nodejs
+
+- Express4示例
+
+    github: [https://github.com/aa24615/qadmin-express](https://github.com/aa24615/qadmin-express)     
+    gitosc: [https://gitee.com/flash127/qadmin-express](https://gitee.com/flash127/qadmin-express) 
+
 > go
 
 - beego示例
