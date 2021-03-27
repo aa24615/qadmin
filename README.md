@@ -65,15 +65,13 @@
 
 ### 在架构中使用
 
-- thinkphp6示例
+**thinkphp6示例**
 - github: [https://github.com/aa24615/qadmin-thinkphp6](https://github.com/aa24615/qadmin-thinkphp6)
 - gitosc: [https://gitee.com/flash127/qadmin-thinkphp6](https://gitee.com/flash127/qadmin-thinkphp6)
 
-- laravel8示例
+**laravel8示例**
 - github: [https://github.com/aa24615/qadmin-laravel8](https://github.com/aa24615/qadmin-laravel8)
 - gitosc: [https://gitee.com/flash127/qadmin-laravel8](https://gitee.com/flash127/qadmin-laravel8)
-
-
 
 ### 参与贡献
 
