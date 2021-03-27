@@ -54,14 +54,12 @@
 - 缺点: 跳转时能看到左侧有闪动的瞬间
 - 演示: [http://demo.qadmin.net](http://demo.qadmin.net)
 
-
 ### iframe版
 
 - 只需要一个页面引入左侧菜单与顶栏
 - 左侧菜单由vue渲染,主体内容以iframe标签方式展示
 - 优点: 传统,简单,上手更快
 - 演示: [http://iframe.qadmin.net](http://iframe.qadmin.net)
-
 
 ### 在架构中使用
 
