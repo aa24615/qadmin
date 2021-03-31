@@ -21,6 +21,13 @@
   "homepage": "https://github.com/aa24615/qadmin#readme",
   "dependencies": {
     "fs-extra": "^9.0.1",
-    "jsdom": "^16.4.0"
+    "jsdom": "^16.4.0",
+    "less": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-react": "^7.23.1"
   }
 }

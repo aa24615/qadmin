@@ -4,6 +4,10 @@
 
 轻量不复杂 简洁不简单
 
+![login.png](screenshot/login.png)
+
+![bsadmin.png](screenshot/qadmin.png)
+
 ### NPM
  ```
  npm i qadmin-qadmin 
