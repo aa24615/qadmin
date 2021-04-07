@@ -1,6 +1,6 @@
 {
   "name": "qadmin-qadmin",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "description": "基于layui的轻量级后台模板",
   "main": "index.html",
   "scripts": {
@@ -11,10 +11,14 @@
     "url": "git+https://github.com/aa24615/qadmin.git"
   },
   "keywords": [
-    "基于layui的轻量级后台模板"
+    "qadmin",
+    "后台模板",
+    "layui模板",
+    "layui后台模板",
+    "qadmin后台模板"
   ],
   "author": "读心印",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aa24615/qadmin/issues"
   },
