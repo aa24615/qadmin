@@ -167,8 +167,8 @@ function msg(code=1,msg='',url='',s=3) {
         code = code.code;
     }
     code = code==1 ? 1 : 2;
-    layer.msg(msg, {icon: code,offset: config.layerMsg.offset || 't',shade: config.layerMsg.shade || [0.4, '#000']});
-    if(url){
+    layer.msg(msg, {icon: code,offset: 't',shade:  [0.4, '#000']});
+    if(url!=''){
         setTimeout(function () {
             window.location.href = url;
        },s*1000);

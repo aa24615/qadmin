@@ -12,6 +12,7 @@
     <script src="./static/layui/layui.js"></script>
     <script src="./static/js/jquery-3.3.1.min.js"></script>
     <script src="./static/js/vue.min.js"></script>
+    <script src="./static/admin/js/config.js"></script>
 </head>
 <body class="p20">
 
@@ -272,118 +273,116 @@
 
 
 <script>
-    layui.use('form', function () {
-        var form = layui.form, layer = layui.layer, $ = layui.jquery;
+layui.use('form', function() {
+    const form = layui.form; const layer = layui.layer; const $ = layui.jquery;
 
-        form.on('switch(state)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            $.ajax({
-                url: "/admin/article/state.html",
-                data: {
-                    id: id,
-                },
-                type: "get",
-                dataType: "json",
-                success: function (e) {
-                    if (e.code == 1) {
-                        layer.msg(e.msg, {
-                            icon: 1
-                        });
-                    } else {
-                        layer.msg(e.msg, {
-                            icon: 2,
-                            shade: 0.5,
-                            time: 2000,
-                            shadeClose: true
-                        });
-                    }
+    form.on('switch(state)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        $.ajax({
+            url: '/admin/article/state.html',
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(e) {
+                if (e.code == 1) {
+                    layer.msg(e.msg, {
+                        icon: 1,
+                    });
+                } else {
+                    layer.msg(e.msg, {
+                        icon: 2,
+                        shade: 0.5,
+                        time: 2000,
+                        shadeClose: true,
+                    });
                 }
-            });
-        });
-
-        form.on('switch(top)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            $.ajax({
-                url: "/admin/article/top.html",
-                data: {
-                    id: id,
-                },
-                type: "get",
-                dataType: "json",
-                success: function (e) {
-                    if (e.code == 1) {
-                        layer.msg(e.msg, {
-                            icon: 1
-                        });
-                    } else {
-                        layer.msg(e.msg, {
-                            icon: 2,
-                            shade: 0.5,
-                            time: 2000,
-                            shadeClose: true
-                        });
-                    }
-                }
-            });
-        });
-
-        form.on('switch(experiment)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            $.ajax({
-                url: "/admin/article/experiment.html",
-                data: {
-                    id: id,
-                },
-                type: "get",
-                dataType: "json",
-                success: function (e) {
-                    if (e.code == 1) {
-                        layer.msg(e.msg, {
-                            icon: 1
-                        });
-                    } else {
-                        layer.msg(e.msg, {
-                            icon: 2,
-                            shade: 0.5,
-                            time: 2000,
-                            shadeClose: true
-                        });
-                    }
-                }
-            });
-        });
-
-        form.on('switch(works)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            $.ajax({
-                url: "/admin/article/works.html",
-                data: {
-                    id: id,
-                },
-                type: "get",
-                dataType: "json",
-                success: function (e) {
-                    if (e.code == 1) {
-                        layer.msg(e.msg, {
-                            icon: 1
-                        });
-                    } else {
-                        layer.msg(e.msg, {
-                            icon: 2,
-                            shade: 0.5,
-                            time: 2000,
-                            shadeClose: true
-                        });
-                    }
-                }
-            });
+            },
         });
     });
+
+    form.on('switch(top)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        $.ajax({
+            url: '/admin/article/top.html',
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(e) {
+                if (e.code == 1) {
+                    layer.msg(e.msg, {
+                        icon: 1,
+                    });
+                } else {
+                    layer.msg(e.msg, {
+                        icon: 2,
+                        shade: 0.5,
+                        time: 2000,
+                        shadeClose: true,
+                    });
+                }
+            },
+        });
+    });
+
+    form.on('switch(experiment)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        $.ajax({
+            url: '/admin/article/experiment.html',
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(e) {
+                if (e.code == 1) {
+                    layer.msg(e.msg, {
+                        icon: 1,
+                    });
+                } else {
+                    layer.msg(e.msg, {
+                        icon: 2,
+                        shade: 0.5,
+                        time: 2000,
+                        shadeClose: true,
+                    });
+                }
+            },
+        });
+    });
+
+    form.on('switch(works)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        $.ajax({
+            url: '/admin/article/works.html',
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(e) {
+                if (e.code == 1) {
+                    layer.msg(e.msg, {
+                        icon: 1,
+                    });
+                } else {
+                    layer.msg(e.msg, {
+                        icon: 2,
+                        shade: 0.5,
+                        time: 2000,
+                        shadeClose: true,
+                    });
+                }
+            },
+        });
+    });
+});
 </script>
 
 
-<script src="./static/admin/js/config.js"></script>
 <script src="./static/admin/js/script.js"></script>
-
 </body>
 </html>

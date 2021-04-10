@@ -101,7 +101,13 @@ const menu = [{
 const config = {
     name: "Qadmin",
     menu: menu,
+    version: 'v1.6',
+    official:'http://www.qadmin.net'
 };
 
-// module.exports.name = "Qadmin";
-// module.exports.menu = menu;
+try {
+    module.exports.name = "Qadmin";
+    module.exports.menu = menu;
+}catch (e){
+
+}

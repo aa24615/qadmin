@@ -36,25 +36,22 @@
     </form>
 
     <script>
+layui.use('form', function() {
+    const form = layui.form;
+    const layer = layui.layer;
 
-
-        layui.use('form', function () {
-            var form = layui.form,
-                layer = layui.layer,
-                $ = layui.jquery;
-
-            form.on('submit(login)', function (data) {
-                layer.load({
-                    shade: 0.5,
-                    time: 0,
-                });
-                setTimeout(function () {
-                    window.location.href = 'index.html';
-                }, 1000)
-
-                return false;
-            });
+    form.on('submit(login)', function(data) {
+        layer.load({
+            shade: 0.5,
+            time: 0,
         });
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 1000);
+
+        return false;
+    });
+});
     </script>
 </div>
 </body>

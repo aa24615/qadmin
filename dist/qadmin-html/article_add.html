@@ -13,6 +13,7 @@
     <script src="./static/layui/layui.js"></script>
     <script src="./static/js/jquery-3.3.1.min.js"></script>
     <script src="./static/js/vue.min.js"></script>
+    <script src="./static/admin/js/config.js"></script>
 </head>
 <body>
 
@@ -177,72 +178,72 @@
 
 
 <script>
-    var ue = UE.getEditor('container');
-    setTimeout(function () {
-        ue.setHeight(500)
-    }, 500)
-    layui.use(['form', 'upload'], function () {
-        var form = layui.form,
-            layer = layui.layer,
-            upload = layui.upload;
+const ue = UE.getEditor('container');
+setTimeout(function() {
+    ue.setHeight(500);
+}, 500);
+layui.use(['form', 'upload'], function() {
+    const form = layui.form;
+    const layer = layui.layer;
+    const upload = layui.upload;
 
-
-        upload.render({
-            elem: '#file' //绑定元素
-            , url: "/admin/uploads/file.html" //上传接口
-            , done: function (res) {
-                //上传完毕回调
-                if (res.code == 1) {
-                    $("#file_url").val(res.url);
-                } else {
-                    layer.msg(res.info, function () {
-                    })
-                }
-            }, error: function () {
-                layer.msg("上传异常");
+    upload.render({
+        elem: '#file', // 绑定元素
+        url: '/admin/uploads/file.html', // 上传接口
+        done: function(res) {
+            // 上传完毕回调
+            if (res.code == 1) {
+                $('#file_url').val(res.url);
+            } else {
+                layer.msg(res.info, function() {
+                });
             }
-        });
-
-        upload.render({
-            elem: '#pic' //绑定元素
-            , url: "/admin/uploads/pic.html" //上传接口
-            , done: function (res) {
-                //上传完毕回调
-                if (res.code == 1) {
-                    $("#pic_url").val(res.url);
-                    $(".pic_url").attr("src", res.url);
-                } else {
-                    layer.msg(res.info, function () {
-                    })
-                }
-            }, error: function () {
-                layer.msg("上传异常");
-            }
-        });
-
-        form.on('submit(submit)', function (data) {
-            layer.load({time: 0});
-            $.post(data.form.action, data.field, function (e) {
-                layer.closeAll('loading');
-                if (e.code == 1) {
-                    layer.msg(e.msg, {icon: 1, shade: 0.5,});
-                    setTimeout(function () {
-                        window.location.href = e.url;
-                    }, 1000);
-                } else {
-                    layer.msg(e.msg, {icon: 2, shade: 0.5, time: 2000, shadeClose: true});
-                }
-            })
-            return false;
-        });
+        }, error: function() {
+            layer.msg('上传异常');
+        },
     });
+
+    upload.render({
+        elem: '#pic', // 绑定元素
+        url: '/admin/uploads/pic.html', // 上传接口
+        done: function(res) {
+            // 上传完毕回调
+            if (res.code == 1) {
+                $('#pic_url').val(res.url);
+                $('.pic_url').attr('src', res.url);
+            } else {
+                layer.msg(res.info, function() {
+                });
+            }
+        }, error: function() {
+            layer.msg('上传异常');
+        },
+    });
+
+    form.on('submit(submit)', function(data) {
+        layer.load({time: 0});
+        $.post(data.form.action, data.field, function(e) {
+            layer.closeAll('loading');
+            if (e.code == 1) {
+                layer.msg(e.msg, {icon: 1, shade: 0.5});
+                setTimeout(function() {
+                    window.location.href = e.url;
+                }, 1000);
+            } else {
+                layer.msg(e.msg, {icon: 2, shade: 0.5, time: 2000, shadeClose: true});
+            }
+        });
+        return false;
+    });
+});
 </script>
 
 
         </div>
     </div>
 </div>
-<script src="./static/admin/js/config.js"></script>
+
 <script src="./static/admin/js/script.js"></script>
+<script src="./static/admin/js/update.js" ></script>
 </body>
 </html>

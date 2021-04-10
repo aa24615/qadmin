@@ -13,6 +13,7 @@
     <script src="./static/layui/layui.js"></script>
     <script src="./static/js/jquery-3.3.1.min.js"></script>
     <script src="./static/js/vue.min.js"></script>
+    <script src="./static/admin/js/config.js"></script>
 </head>
 <body>
 
@@ -55,6 +56,12 @@
         <div class="right p20">
             
 
+<script>
+console.log(config);
+$(function() {
+    $('#version').html(config.version);
+});
+</script>
 
 <blockquote class="layui-elem-quote">
     <h2>QAdmin 轻量级后台模板</h2>
@@ -83,7 +90,7 @@
                     <li>风格简洁简单,中小型项目首选</li>
                     <li>不管你是初级还是高级工程师,都有可以快速上手</li>
                     <li>QAdmin是由vue混合式开发,可以在模板任意使用jq或vue/layui</li>
-                    <li>当前版本: v1.0</li>
+                    <li>当前版本: <b id="version"></b></li>
                     <li><b>关注官网或github随时下载最新版</b></li>
                     <li>
                         <a href="http://www.qadmin.net/" target="_blank" class="layui-btn layui-btn-ms">进入官网</a>
@@ -236,7 +243,8 @@
         </div>
     </div>
 </div>
-<script src="./static/admin/js/config.js"></script>
+
 <script src="./static/admin/js/script.js"></script>
+<script src="./static/admin/js/update.js" ></script>
 </body>
 </html>

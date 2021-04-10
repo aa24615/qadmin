@@ -190,36 +190,35 @@
 </table>
 
 <script>
-    layui.use('form', function () {
-        var form = layui.form, layer = layui.layer, $ = layui.jquery;
+layui.use('form', function() {
+    const form = layui.form; const layer = layui.layer; const $ = layui.jquery;
 
-        form.on('switch(state)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            $.ajax({
-                url: "/admin/category/state/type/state.html",
-                data: {
-                    id: id,
-                },
-                type: "get",
-                dataType: "json",
-                success: function (e) {
-                    if (e.code == 1) {
-                        layer.msg(e.msg, {
-                            icon: 1
-                        });
-                    } else {
-                        layer.msg(e.msg, {
-                            icon: 2,
-                            shade: 0.5,
-                            time: 2000,
-                            shadeClose: true
-                        });
-                    }
+    form.on('switch(state)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        $.ajax({
+            url: '/admin/category/state/type/state.html',
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(e) {
+                if (e.code == 1) {
+                    layer.msg(e.msg, {
+                        icon: 1,
+                    });
+                } else {
+                    layer.msg(e.msg, {
+                        icon: 2,
+                        shade: 0.5,
+                        time: 2000,
+                        shadeClose: true,
+                    });
                 }
-            });
+            },
         });
-
     });
+});
 </script>
 
 

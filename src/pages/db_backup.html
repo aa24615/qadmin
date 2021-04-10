@@ -72,297 +72,296 @@
 </div>
 </body>
 <script>
-    var vue = new Vue({
-        el: '#app2',
-        data: {
-            list: [
-                {
-                    "Selected": false,
-                    "Name": "iycms_admin",
-                    "Comment": "管理员表",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "0",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:08:49",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_admin&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_article",
-                    "Comment": "文章表",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "9",
-                    "Data_length": "80KB",
-                    "Create_time": "2018-04-23 00:08:49",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_article&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_category",
-                    "Comment": "文章栏目",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "15",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:08:49",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_category&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_flink",
-                    "Comment": "友情链接",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "5",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:08:50",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_flink&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_info",
-                    "Comment": "个人资料",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "19",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:08:51",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_info&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_keys",
-                    "Comment": "TAG表",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "26",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:08:52",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_keys&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_leave",
-                    "Comment": "留言表",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "60",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-28 12:42:22",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_leave&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_menu",
-                    "Comment": "后台菜单",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "51",
-                    "Data_length": "48KB",
-                    "Create_time": "2018-04-23 00:08:52",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_menu&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_nav",
-                    "Comment": "前台导航",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "5",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:08:54",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_nav&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_region",
-                    "Comment": "城市地区",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "3461",
-                    "Data_length": "336KB",
-                    "Create_time": "2018-04-23 00:08:54",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_region&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_skills",
-                    "Comment": "专业技能",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "66",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:09:50",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_skills&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_user",
-                    "Comment": "用户表",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "11",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-28 12:44:59",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_user&dir=20190401_2718"
-                },
-                {
-                    "Selected": false,
-                    "Name": "iycms_work",
-                    "Comment": "工作经历",
-                    "Engine": "InnoDB",
-                    "Collation": "utf8_general_ci",
-                    "Rows": "3",
-                    "Data_length": "16KB",
-                    "Create_time": "2018-04-23 00:09:51",
-                    "Is": "未备份",
-                    "Url": "/admin/mysql/backup.html?table=iycms_work&dir=20190401_2718"
-                },
-            ],
-            all: false,
-            single: true,
-            c: 0,
-            t: 0,
-            d: 0,
-            run: false,
-        },
-        methods: {
-            backups: function () {
-                if (this.count() > 0) {
-                    this.c = this.count();
-                    this.t = 0;
-                    this.d = 0;
-                } else {
-                    layer.msg("你还未选择要备份的表", function () {
-                    }); //总个数
+const vue = new Vue({
+    el: '#app2',
+    data: {
+        list: [
+            {
+                'Selected': false,
+                'Name': 'iycms_admin',
+                'Comment': '管理员表',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '0',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:08:49',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_admin&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_article',
+                'Comment': '文章表',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '9',
+                'Data_length': '80KB',
+                'Create_time': '2018-04-23 00:08:49',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_article&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_category',
+                'Comment': '文章栏目',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '15',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:08:49',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_category&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_flink',
+                'Comment': '友情链接',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '5',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:08:50',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_flink&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_info',
+                'Comment': '个人资料',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '19',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:08:51',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_info&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_keys',
+                'Comment': 'TAG表',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '26',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:08:52',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_keys&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_leave',
+                'Comment': '留言表',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '60',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-28 12:42:22',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_leave&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_menu',
+                'Comment': '后台菜单',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '51',
+                'Data_length': '48KB',
+                'Create_time': '2018-04-23 00:08:52',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_menu&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_nav',
+                'Comment': '前台导航',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '5',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:08:54',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_nav&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_region',
+                'Comment': '城市地区',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '3461',
+                'Data_length': '336KB',
+                'Create_time': '2018-04-23 00:08:54',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_region&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_skills',
+                'Comment': '专业技能',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '66',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:09:50',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_skills&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_user',
+                'Comment': '用户表',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '11',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-28 12:44:59',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_user&dir=20190401_2718',
+            },
+            {
+                'Selected': false,
+                'Name': 'iycms_work',
+                'Comment': '工作经历',
+                'Engine': 'InnoDB',
+                'Collation': 'utf8_general_ci',
+                'Rows': '3',
+                'Data_length': '16KB',
+                'Create_time': '2018-04-23 00:09:51',
+                'Is': '未备份',
+                'Url': '/admin/mysql/backup.html?table=iycms_work&dir=20190401_2718',
+            },
+        ],
+        all: false,
+        single: true,
+        c: 0,
+        t: 0,
+        d: 0,
+        run: false,
+    },
+    methods: {
+        backups: function() {
+            if (this.count() > 0) {
+                this.c = this.count();
+                this.t = 0;
+                this.d = 0;
+            } else {
+                layer.msg('你还未选择要备份的表', function() {
+                }); // 总个数
+                return false;
+            }
+
+            this.run = true;
+
+            !(function h(i, self) {
+                if (i >= self.list.length) {
+                    setTimeout(function() {
+                        layui.layer.msg('备份完成', {icon: 1});
+                        self.run = false;
+                    }, 1000);
                     return false;
                 }
-
-                this.run = true;
-
-                !(function h(i, self) {
-                    if (i >= self.list.length) {
-                        setTimeout(function () {
-                            layui.layer.msg("备份完成", {icon: 1})
-                            self.run = false;
-                        }, 1000)
-                        return false;
-                    }
-                    if (self.list[i].Selected) {
-                        self.list[i].Is = "正在备份...";
-                        var url = self.single ? self.list[i].Url + "&single=1" : self.list[i].Url;
-                        $.get(url, function (e) {
-                            if (e.code == 1) {
-                                self.list[i].Selected = false;
-                                self.list[i].Is = "√备份成功";
-                            } else {
-                                self.list[i].Is = "×备份失败";
-                            }
-                            self.t++;
-                            self.d = self.t / self.c * 100;
-                            h((i + 1), self);
-                            setTimeout(function () {
-                                layui.form.render();
-                            }, 5)
-                        })
-                    } else {
+                if (self.list[i].Selected) {
+                    self.list[i].Is = '正在备份...';
+                    const url = self.single ? self.list[i].Url + '&single=1' : self.list[i].Url;
+                    $.get(url, function(e) {
+                        if (e.code == 1) {
+                            self.list[i].Selected = false;
+                            self.list[i].Is = '√备份成功';
+                        } else {
+                            self.list[i].Is = '×备份失败';
+                        }
+                        self.t++;
+                        self.d = self.t / self.c * 100;
                         h((i + 1), self);
-                    }
-                })(0, this);
-            },
-            backup: function (i, url) {
-                var self = this;
-                var url = self.single ? url + "&single=1" : url;
-                self.list[i].Is = "正在备份...";
-                $.get(url, function (e) {
-                    if (e.code == 1) {
-                        self.list[i].Selected = false;
-                        self.list[i].Is = "√备份成功";
-                    } else {
-                        self.list[i].Is = "×备份失败";
-                    }
-                })
-            },
-            count: function () { //计算选中的个数
-                for (var i = 0, c = 0; i < this.list.length; i++) {
-                    if (this.list[i].Selected) {
-                        c++
-                    }
+                        setTimeout(function() {
+                            layui.form.render();
+                        }, 5);
+                    });
+                } else {
+                    h((i + 1), self);
                 }
-                return c;
-            },
-            auto: function () {
-                layui.layer.msg("开发中...", function () {
-                });
-            }
-        }
-    })
-
-    layui.use('form', function () {
-        var form = layui.form, layer = layui.layer, $ = layui.jquery;
-        form.on('checkbox(all)', function (data) {
-            for (var i = 0; i < vue.list.length; i++) {
-                vue.list[i].Selected = data.elem.checked;
-            }
-            setTimeout(function () {
-                form.render();
-            }, 5)
-
-        });
-
-        form.on('checkbox(vo)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            for (var i = 0; i < vue.list.length; i++) {
-                if (i == id) {
-                    vue.list[i].Selected = data.elem.checked;
-                }
-            }
-        });
-
-        form.on('checkbox(single)', function (data) {
-            vue.single = data.elem.checked;
-        });
-
-
-        form.on('switch(state)', function (data) {
-            var id = $(data.elem).attr("data-id");
-            $.ajax({
-                url: "/admin/mysql/state.html",
-                data: {
-                    id: id,
-                },
-                type: "get",
-                dataType: "json",
-                success: function (e) {
-                    if (e.code == 1) {
-                        layer.msg(e.msg, {
-                            icon: 1
-                        });
-                    } else {
-                        layer.msg(e.msg, {
-                            icon: 2,
-                            shade: 0.5,
-                            time: 2000,
-                            shadeClose: true
-                        });
-                    }
+            })(0, this);
+        },
+        backup: function(i, url) {
+            const self = this;
+            url = self.single ? url + '&single=1' : url;
+            self.list[i].Is = '正在备份...';
+            $.get(url, function(e) {
+                if (e.code == 1) {
+                    self.list[i].Selected = false;
+                    self.list[i].Is = '√备份成功';
+                } else {
+                    self.list[i].Is = '×备份失败';
                 }
             });
+        },
+        count: function() { // 计算选中的个数
+            let c = 0;
+            for (let i = 0; i < this.list.length; i++) {
+                if (this.list[i].Selected) {
+                    c++;
+                }
+            }
+            return c;
+        },
+        auto: function() {
+            layui.layer.msg('开发中...', function() {
+            });
+        },
+    },
+});
+
+layui.use('form', function() {
+    const form = layui.form; const layer = layui.layer; const $ = layui.jquery;
+    form.on('checkbox(all)', function(data) {
+        for (let i = 0; i < vue.list.length; i++) {
+            vue.list[i].Selected = data.elem.checked;
+        }
+        setTimeout(function() {
+            form.render();
+        }, 5);
+    });
+
+    form.on('checkbox(vo)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        for (let i = 0; i < vue.list.length; i++) {
+            if (i == id) {
+                vue.list[i].Selected = data.elem.checked;
+            }
+        }
+    });
+
+    form.on('checkbox(single)', function(data) {
+        vue.single = data.elem.checked;
+    });
+
+    form.on('switch(state)', function(data) {
+        const id = $(data.elem).attr('data-id');
+        $.ajax({
+            url: '/admin/mysql/state.html',
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(e) {
+                if (e.code == 1) {
+                    layer.msg(e.msg, {
+                        icon: 1,
+                    });
+                } else {
+                    layer.msg(e.msg, {
+                        icon: 2,
+                        shade: 0.5,
+                        time: 2000,
+                        shadeClose: true,
+                    });
+                }
+            },
         });
     });
+});
 </script>
 

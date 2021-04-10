@@ -1,10 +1,12 @@
 {
   "name": "qadmin-qadmin",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "基于layui的轻量级后台模板",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node app.js",
+    "fix": "./node_modules/.bin/eslint --ext .js,.html src/html/ src/iframe/ src/pages/ src/tools.js src/menu.js --fix"
   },
   "repository": {
     "type": "git",
