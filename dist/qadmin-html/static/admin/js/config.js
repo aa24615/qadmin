@@ -82,7 +82,7 @@ const menu = [{
 }, {
     "name": "退出登录",
     "icon": "&#xe65c;",
-    "url": "out.html",
+    "url": "#out.html",
     "list": []
 }, {
     "name": "开发者官网",
@@ -90,18 +90,12 @@ const menu = [{
     "url": "http://www.qadmin.net/",
     "target": "_blank",
     "list": []
-}, {
-    "name": "开发文档",
-    "icon": "&#xe655;",
-    "url": "http://docs.qadmin.net/",
-    "target": "_blank",
-    "list": []
 }];
 
 const config = {
     name: "Qadmin",
     menu: menu,
-    version: 'v1.6',
+    version: 'v1.7',
     official:'http://www.qadmin.net'
 };
 

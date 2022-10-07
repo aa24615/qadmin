@@ -57,11 +57,6 @@
             
 
 <div id="app2">
-
-    <div v-if="run" class="layui-progress  layui-progress-big" lay-showpercent="yes">
-        <div class="layui-progress-bar layui-bg-red" :style="{width:d+'%'}">{{d}}%</div>
-    </div>
-
     <table class="layui-table layui-form">
         <colgroup>
             <col width="50">
@@ -91,17 +86,279 @@
         </thead>
         <tbody>
 
-        <tr v-for="(vo,i) in list">
-            <td><input type="checkbox" lay-filter="vo" :data-id="i" v-model="vo.Selected" :value="vo.Selected" lay-skin="primary"></td>
-            <td>{{vo.Name}}</td>
-            <td>{{vo.Comment}}</td>
-            <td>{{vo.Engine}}</td>
-            <td>{{vo.Collation}}</td>
-            <td>{{vo.Rows}}</td>
-            <td>{{vo.Data_length}}</td>
-            <td>{{vo.Create_time}}</td>
-            <td>{{vo.Is}}</td>
-            <td><a @click.prevent="backup(i,vo.Url)" :href="vo.Url">备份</a></td>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="0" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_admin</td>
+            <td>管理员表</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>0</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:08:49</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_admin&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="1" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_article</td>
+            <td>文章表</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>9</td>
+            <td>80KB</td>
+            <td>2018-04-23 00:08:49</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_article&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="2" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_category</td>
+            <td>文章栏目</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>15</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:08:49</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_category&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="3" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_flink</td>
+            <td>友情链接</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>5</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:08:50</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_flink&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="4" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_info</td>
+            <td>个人资料</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>19</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:08:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_info&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="5" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_keys</td>
+            <td>TAG表</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>26</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:08:52</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_keys&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="6" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_leave</td>
+            <td>留言表</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>60</td>
+            <td>16KB</td>
+            <td>2018-04-28 12:42:22</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_leave&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="7" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_menu</td>
+            <td>后台菜单</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>51</td>
+            <td>48KB</td>
+            <td>2018-04-23 00:08:52</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_menu&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="8" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_nav</td>
+            <td>前台导航</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>5</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:08:54</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_nav&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="9" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_region</td>
+            <td>城市地区</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3461</td>
+            <td>336KB</td>
+            <td>2018-04-23 00:08:54</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_region&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="10" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_skills</td>
+            <td>专业技能</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>66</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:50</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_skills&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="11" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_user</td>
+            <td>用户表</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>11</td>
+            <td>16KB</td>
+            <td>2018-04-28 12:44:59</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_user&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_work</td>
+            <td>工作经历</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_xxxx</td>
+            <td>xxxx</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_xxxx</td>
+            <td>xxxx</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_xxxx</td>
+            <td>xxxx</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+
+
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_xxxx</td>
+            <td>xxxx</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+
+
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_xxxx</td>
+            <td>xxxx</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" lay-filter="vo" data-id="12" lay-skin="primary" value="false">
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+            <td>qadmin_xxxx</td>
+            <td>xxxx</td>
+            <td>InnoDB</td>
+            <td>utf8_general_ci</td>
+            <td>3</td>
+            <td>16KB</td>
+            <td>2018-04-23 00:09:51</td>
+            <td>未备份</td>
+            <td><a href="#/backup.html?table=qadmin_work&amp;dir=20190401_2718">备份</a></td>
         </tr>
 
 
@@ -111,10 +368,10 @@
 
         <tr>
             <td colspan="99">
-                <input type="checkbox" lay-filter="single" v-model="single" lay-skin="primary">
+                <input type="checkbox" lay-filter="single" lay-skin="primary">
                 &nbsp;&nbsp;&nbsp;&nbsp;所有表合并成一个文件
-                <a href="javascript:;" style="float: right;" @click="auto" class="layui-btn layui-btn-normal">自动备份</a>
-                <a href="javascript:;" style="float: right;  margin-right: 20px;" @click="backups" class="layui-btn">一键备份</a>
+                <a href="javascript:;" style="float: right;" class="layui-btn layui-btn-normal">自动备份</a>
+                <a href="javascript:;" style="float: right;  margin-right: 20px;" class="layui-btn">一键备份</a>
             </td>
         </tr>
 
@@ -125,246 +382,6 @@
 </div>
 
 <script>
-const vue = new Vue({
-    el: '#app2',
-    data: {
-        list: [
-            {
-                'Selected': false,
-                'Name': 'iycms_admin',
-                'Comment': '管理员表',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '0',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:08:49',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_admin&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_article',
-                'Comment': '文章表',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '9',
-                'Data_length': '80KB',
-                'Create_time': '2018-04-23 00:08:49',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_article&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_category',
-                'Comment': '文章栏目',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '15',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:08:49',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_category&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_flink',
-                'Comment': '友情链接',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '5',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:08:50',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_flink&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_info',
-                'Comment': '个人资料',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '19',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:08:51',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_info&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_keys',
-                'Comment': 'TAG表',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '26',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:08:52',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_keys&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_leave',
-                'Comment': '留言表',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '60',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-28 12:42:22',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_leave&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_menu',
-                'Comment': '后台菜单',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '51',
-                'Data_length': '48KB',
-                'Create_time': '2018-04-23 00:08:52',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_menu&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_nav',
-                'Comment': '前台导航',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '5',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:08:54',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_nav&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_region',
-                'Comment': '城市地区',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '3461',
-                'Data_length': '336KB',
-                'Create_time': '2018-04-23 00:08:54',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_region&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_skills',
-                'Comment': '专业技能',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '66',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:09:50',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_skills&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_user',
-                'Comment': '用户表',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '11',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-28 12:44:59',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_user&dir=20190401_2718',
-            },
-            {
-                'Selected': false,
-                'Name': 'iycms_work',
-                'Comment': '工作经历',
-                'Engine': 'InnoDB',
-                'Collation': 'utf8_general_ci',
-                'Rows': '3',
-                'Data_length': '16KB',
-                'Create_time': '2018-04-23 00:09:51',
-                'Is': '未备份',
-                'Url': '/admin/mysql/backup.html?table=iycms_work&dir=20190401_2718',
-            },
-        ],
-        all: false,
-        single: true,
-        c: 0,
-        t: 0,
-        d: 0,
-        run: false,
-    },
-    methods: {
-        backups: function() {
-            if (this.count() > 0) {
-                this.c = this.count();
-                this.t = 0;
-                this.d = 0;
-            } else {
-                layer.msg('你还未选择要备份的表', function() {
-                }); // 总个数
-                return false;
-            }
-
-            this.run = true;
-
-            !(function h(i, self) {
-                if (i >= self.list.length) {
-                    setTimeout(function() {
-                        layui.layer.msg('备份完成', {icon: 1});
-                        self.run = false;
-                    }, 1000);
-                    return false;
-                }
-                if (self.list[i].Selected) {
-                    self.list[i].Is = '正在备份...';
-                    const url = self.single ? self.list[i].Url + '&single=1' : self.list[i].Url;
-                    $.get(url, function(e) {
-                        if (e.code == 1) {
-                            self.list[i].Selected = false;
-                            self.list[i].Is = '√备份成功';
-                        } else {
-                            self.list[i].Is = '×备份失败';
-                        }
-                        self.t++;
-                        self.d = self.t / self.c * 100;
-                        h((i + 1), self);
-                        setTimeout(function() {
-                            layui.form.render();
-                        }, 5);
-                    });
-                } else {
-                    h((i + 1), self);
-                }
-            })(0, this);
-        },
-        backup: function(i, url) {
-            const self = this;
-            url = self.single ? url + '&single=1' : url;
-            self.list[i].Is = '正在备份...';
-            $.get(url, function(e) {
-                if (e.code == 1) {
-                    self.list[i].Selected = false;
-                    self.list[i].Is = '√备份成功';
-                } else {
-                    self.list[i].Is = '×备份失败';
-                }
-            });
-        },
-        count: function() { // 计算选中的个数
-            let c = 0;
-            for (let i = 0; i < this.list.length; i++) {
-                if (this.list[i].Selected) {
-                    c++;
-                }
-            }
-            return c;
-        },
-        auto: function() {
-            layui.layer.msg('开发中...', function() {
-            });
-        },
-    },
-});
 
 layui.use('form', function() {
     const form = layui.form; const layer = layui.layer; const $ = layui.jquery;

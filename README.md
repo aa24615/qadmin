@@ -47,7 +47,7 @@
         │  └─ ...      
     ├─qadmin-iframe               iframe版(文件与经典版一致)
   ├─src                           原代码(使用者不必理会)
-  ├─run.js                        nodejs脚本
+  ├─app.js                        nodejs脚本
 ```
 
 
