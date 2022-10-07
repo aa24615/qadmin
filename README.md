@@ -1,6 +1,6 @@
 # QAdmin轻量级后台模板
 
-基于[layui框架](https://www.layui.com/)与[Vue.js](https://cn.vuejs.org/)构建
+基于[layui框架](https://github.com/sentsin/layui)与[Vue.js](https://cn.vuejs.org/)构建
 
 轻量不复杂 简洁不简单
 
@@ -10,6 +10,7 @@
 
 
 ### git仓库
+
 - github: [https://github.com/aa24615/qadmin](https://github.com/aa24615/qadmin)
 - gitosc: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
 
@@ -54,7 +55,7 @@
 - 优点: 传统,简单,上手更快
 - 演示: [http://iframe.qadmin.net](http://iframe.qadmin.net)
 
-### 在架构中使用
+### 在框架中使用
 
 > php
 
