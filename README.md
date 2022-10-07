@@ -8,24 +8,13 @@
 
 ![bsadmin.png](screenshot/qadmin.png)
 
-### NPM
- ```
- npm i qadmin-qadmin 
-```
+
 ### git仓库
 - github: [https://github.com/aa24615/qadmin](https://github.com/aa24615/qadmin)
 - gitosc: [https://gitee.com/flash127/qadmin](https://gitee.com/flash127/qadmin)
 
-### zip下载
-- 官方下载: [http://www.qadmin.net/](http://www.qadmin.net/)
-- A5下载: [https://www.a5xiazai.com/moban/142210.html](https://www.a5xiazai.com/moban/142210.html)
-- 站长之家: [http://down.chinaz.com/soft/39398.htm](http://down.chinaz.com/soft/39398.htm)
-
-
 
 ### 目录结构
-
-
 
 ```
  ├─dist                           构建后的代码
